@@ -2,6 +2,7 @@
   "name": "synguyen",
   "private": true,
   "version": "0.0.1",
+  "homepage": "https://synguyen98.github.io/my-portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",

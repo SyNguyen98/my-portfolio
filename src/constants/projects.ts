@@ -7,7 +7,7 @@ import {RiTailwindCssFill} from "react-icons/ri";
 export const PROJECTS: Project[] = [
     {
         id: "1",
-        imageUrl: "/projects/chika.webp",
+        imageUrl: `${import.meta.env.BASE_URL}projects/chika.webp`,
         title: "Chika Web App",
         description: "A student project, the beginning of everything",
         githubLink: "https://github.com/SyNguyen98/Chika_Web_App",
@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     },
     {
         id: "2",
-        imageUrl: "/projects/memoria.webp",
+        imageUrl: `${import.meta.env.BASE_URL}projects/memoria.webp`,
         title: "MEMORIA",
         description: "A website storages all your memory resources.",
         link: "https://www.memoria.com.vn",
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     },
     {
         id: "3",
-        imageUrl: "/projects/portfolio.webp",
+        imageUrl: `${import.meta.env.BASE_URL}projects/portfolio.webp`,
         title: "My Portfolio",
         description: "A place to showcase my projects and achievements.",
         techStack: [
