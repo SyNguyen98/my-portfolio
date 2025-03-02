@@ -15,7 +15,7 @@ function App() {
     const [showWelcome, setShowWelcome] = useState(true);
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/my-portfolio">
             <Routes>
                 <Route path="/" element={
                     <Fragment>
