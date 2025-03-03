@@ -156,7 +156,7 @@ const WelcomeScreen = ({onLoadingComplete}: {onLoadingComplete: (loadingComplete
                                         <Language className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600"/>
                                         <span
                                             className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                                            <TypewriterEffect text="synguyen98.github.io/my-portfolio"/>
+                                            <TypewriterEffect text="github.io/my-portfolio"/>
                                         </span>
                                     </div>
                                 </a>
