@@ -2,6 +2,7 @@ import {Fragment, useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router";
 import {AnimatePresence} from "framer-motion";
 import WelcomeScreen from "./components/WelcomeScreen.tsx";
+import Navbar from "./components/Navbar.tsx";
 import AnimatedBackground from './components/Background.tsx';
 import Introduction from "./components/Introduction.tsx";
 import About from "./components/about/About.tsx";
@@ -27,6 +28,7 @@ function App() {
 
                         {!showWelcome && (
                             <center>
+                                <Navbar/>
                                 <AnimatedBackground />
                                 <Introduction />
                                 <About />
