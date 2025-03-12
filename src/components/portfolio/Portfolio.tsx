@@ -1,14 +1,15 @@
-import {ReactNode, SyntheticEvent, useEffect, useState} from "react";
-import SwipeableViews from "react-swipeable-views";
+import {ReactNode, SyntheticEvent, useEffect, useRef, useState} from "react";
 import {useTheme} from "@mui/material/styles";
-import {AppBar, Box, Direction, Tab, Tabs, Typography} from "@mui/material";
+import {AppBar, Box, Direction, Tab, Tabs} from "@mui/material";
 import {Code, EmojiEvents, ViewModule} from '@mui/icons-material';
+import {Swiper, SwiperClass, SwiperSlide} from 'swiper/react';
+import 'swiper/swiper-bundle.css';
 import ProjectCard from "./ProjectCard.tsx";
 import TechIcon from "./TechIcon.tsx";
+import AchievementCard from "./AchievementCard.tsx";
 import AOS from "aos";
 import {PROJECTS} from "../../constants/projects.ts";
 import {TECH_STACKS} from "../../constants/tech.ts";
-import AchievementCard from "./AchievementCard.tsx";
 import {ACHIEVEMENTS} from "../../constants/achievements.ts";
 
 type TabPanelProps = {
@@ -27,7 +28,7 @@ function TabPanel({children, value, index, direction}: TabPanelProps) {
              dir={direction}>
             {value === index && (
                 <Box sx={{p: {xs: 1, sm: 3}}}>
-                    <Typography>{children}</Typography>
+                    {children}
                 </Box>
             )}
         </div>
@@ -37,6 +38,7 @@ function TabPanel({children, value, index, direction}: TabPanelProps) {
 export default function Portfolio() {
     const theme = useTheme();
     const [value, setValue] = useState(0);
+    const swiperRef = useRef<SwiperClass | null>(null);
 
     useEffect(() => {
         // Initialize AOS once
@@ -47,6 +49,9 @@ export default function Portfolio() {
 
     const handleChange = (_event: SyntheticEvent, newValue: number) => {
         setValue(newValue);
+        if (swiperRef.current) {
+            swiperRef.current.slideTo(newValue);
+        }
     };
 
     return (
@@ -116,18 +121,12 @@ export default function Portfolio() {
                                   "&:hover": {
                                       color: "#ffffff",
                                       backgroundColor: "rgba(139, 92, 246, 0.1)",
-                                      transform: "translateY(-2px)",
-                                      "& .lucide": {
-                                          transform: "scale(1.1) rotate(5deg)",
-                                      },
+                                      transform: "translateY(-2px)"
                                   },
                                   "&.Mui-selected": {
                                       color: "#fff",
                                       background: "linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))",
-                                      boxShadow: "0 4px 15px -3px rgba(139, 92, 246, 0.2)",
-                                      "& .lucide": {
-                                          color: "#a78bfa",
-                                      },
+                                      boxShadow: "0 4px 15px -3px rgba(139, 92, 246, 0.2)"
                                   },
                               },
                               "& .MuiTabs-indicator": {
@@ -149,52 +148,60 @@ export default function Portfolio() {
                     </Tabs>
                 </AppBar>
 
-                <SwipeableViews axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                                index={value}
-                                onChangeIndex={setValue}>
-                    <TabPanel value={value} index={0} direction={theme.direction}>
-                        <div className="container mx-auto flex justify-center items-center overflow-hidden">
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
-                                {PROJECTS.map((project, index) => (
-                                    <div key={project.id}
-                                         data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                                         data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                                        <ProjectCard project={project}/>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </TabPanel>
+                <Swiper onSlideChange={(swiper) => setValue(swiper.activeIndex)}
+                        initialSlide={value}
+                        spaceBetween={50}
+                        slidesPerView={1}
+                        onSwiper={(swiper) => swiperRef.current = swiper}>
 
-                    <TabPanel value={value} index={1} direction={theme.direction}>
-                        <div className="container mx-auto flex justify-center items-center overflow-hidden pb-[5%]">
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
-                                {TECH_STACKS.map((stack, index) => (
-                                    <div key={index}
-                                         data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                                         data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                                        <TechIcon icon={stack.icon} name={stack.language}/>
-                                    </div>
-                                ))}
+                    <SwiperSlide>
+                        <TabPanel value={value} index={0} direction={theme.direction}>
+                            <div className="container mx-auto flex justify-center items-center overflow-hidden">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
+                                    {PROJECTS.map((project, index) => (
+                                        <div key={project.id}
+                                             data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                                             data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
+                                            <ProjectCard project={project}/>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        </TabPanel>
+                    </SwiperSlide>
 
-                    </TabPanel>
-
-                    <TabPanel value={value} index={2} direction={theme.direction}>
-                        <div className="container mx-auto flex justify-center items-center overflow-hidden">
-                            <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
-                                {ACHIEVEMENTS.map((achievement, index) => (
-                                    <div key={index}
-                                         data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                                         data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                                        <AchievementCard achievement={achievement}/>
-                                    </div>
-                                ))}
+                    <SwiperSlide>
+                        <TabPanel value={value} index={1} direction={theme.direction}>
+                            <div className="container mx-auto flex justify-center items-center overflow-hidden pb-[5%]">
+                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
+                                    {TECH_STACKS.map((stack, index) => (
+                                        <div key={index}
+                                             data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                                             data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
+                                            <TechIcon icon={stack.icon} name={stack.language}/>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    </TabPanel>
-                </SwipeableViews>
+                        </TabPanel>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <TabPanel value={value} index={2} direction={theme.direction}>
+                            <div className="container mx-auto flex justify-center items-center overflow-hidden">
+                                <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
+                                    {ACHIEVEMENTS.map((achievement, index) => (
+                                        <div key={index}
+                                             data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                                             data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
+                                            <AchievementCard achievement={achievement}/>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </TabPanel>
+                    </SwiperSlide>
+                </Swiper>
             </Box>
         </div>
     );
