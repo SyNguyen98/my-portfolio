@@ -9,7 +9,7 @@ import About from "./components/about/About.tsx";
 import Portfolio from "./components/portfolio/Portfolio.tsx";
 import ContactPage from "./components/contact/Contact.tsx";
 import ProjectDetail from "./components/projects/ProjectDetail.tsx";
-import Footer from "./components/Footer.tsx";
+import Footer from "./components/footer/Footer.tsx";
 import 'aos/dist/aos.css';
 
 function App() {
