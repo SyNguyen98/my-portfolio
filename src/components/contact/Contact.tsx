@@ -1,7 +1,6 @@
 import {useEffect} from "react";
 import SocialLinks from "./SocialLinks.tsx";
 import AOS from "aos";
-import "aos/dist/aos.css";
 
 const ContactPage = () => {
 
@@ -17,13 +16,7 @@ const ContactPage = () => {
                 <h2 data-aos="fade-down"
                     data-aos-duration="1000"
                     className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                    <span style={{
-                        color: "#6366f1",
-                        backgroundImage: "linear-gradient(45deg, #6366f1 10%, #a855f7 93%)",
-                        WebkitBackgroundClip: "text",
-                        backgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                    }}>
+                    <span className="bg-gradient-to-r from-indigo-500 to-purple-500 text-transparent bg-clip-text">
                         Contact Me
                     </span>
                 </h2>

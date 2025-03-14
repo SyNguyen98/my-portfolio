@@ -10,7 +10,6 @@ import {
 } from '@mui/icons-material';
 import {DotLottieReact} from '@lottiefiles/dotlottie-react'
 import AOS from 'aos'
-import 'aos/dist/aos.css'
 import {GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL} from "../constants";
 
 // Memoized Components
