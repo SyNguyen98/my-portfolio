@@ -1,4 +1,3 @@
-import "./About.css";
 import {useEffect, memo, useMemo} from "react"
 import {
     Description,
@@ -129,7 +128,7 @@ const StatCard = memo(({icon: Icon, color, value, label, description, animation}
     </div>
 ));
 
-function About () {
+function About() {
     // Memoized calculations
     const {yearExperience} = useMemo(() => {
         const startDate = new Date("2020-03-02");
@@ -220,10 +219,13 @@ function About () {
                         <p className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0"
                            data-aos="fade-right"
                            data-aos-duration="1500">
-                            A Software Engineer at <b>Bosch Global Software Technologies Vietnam</b>, passionate about technology and continuous learning.
-                            I love exploring new tech stacks and building applications that not only solve real-world problems but also serve my own.
+                            A Software Engineer at <b>Bosch Global Software Technologies Vietnam</b>, passionate about
+                            technology and continuous learning.
+                            I love exploring new tech stacks and building applications that not only solve real-world
+                            problems but also serve my own.
                             <br/>
-                            For me, coding is more than just work — it’s a way to create, innovate and bring ideas to life. 🚀
+                            For me, coding is more than just work — it’s a way to create, innovate and bring ideas to
+                            life. 🚀
                         </p>
 
                         <div
@@ -256,6 +258,46 @@ function About () {
                     ))}
                 </div>
             </div>
+
+            <style>
+                {`
+                    .animate-spin-slower {
+                        animation: spin 20s linear infinite;
+                    }
+                    
+                    .animate-pulse-slow {
+                        animation: pulse 2s infinite;
+                    }
+                    
+                    .animate-float {
+                        animation: float 6s infinite;
+                    }
+                    
+                    @keyframes spin {
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+                    
+                    @keyframes pulse {
+                        0%, 100% {
+                            opacity: 1;
+                        }
+                        50% {
+                            opacity: 0.5;
+                        }
+                    }
+                    
+                    @keyframes float {
+                        0%, 100% {
+                            transform: translateY(0);
+                        }
+                        50% {
+                            transform: translateY(-10%);
+                        }
+                    }
+                `}
+            </style>
         </div>
     );
 }
