@@ -17,7 +17,7 @@
     "@emotion/styled": "^11.14.0",
     "@lottiefiles/dotlottie-react": "^0.13.2",
     "@mui/icons-material": "^6.4.7",
-    "@mui/material": "^6.4.7",
+    "@mui/material": "^6.4.8",
     "aos": "^2.3.4",
     "framer-motion": "^12.5.0",
     "react": "^19.0.0",
