@@ -1,41 +1,14 @@
-import {ReactNode, SyntheticEvent, useEffect, useRef, useState} from "react";
 import {useTheme} from "@mui/material/styles";
-import {AppBar, Box, Direction, Tab, Tabs} from "@mui/material";
-import {Code, EmojiEvents, ViewModule} from '@mui/icons-material';
-import {Swiper, SwiperClass, SwiperSlide} from 'swiper/react';
-import 'swiper/swiper-bundle.css';
-import ProjectCard from "./ProjectCard.tsx";
-import TechIcon from "./TechIcon.tsx";
-import AchievementCard from "./AchievementCard.tsx";
+import {SyntheticEvent, useEffect, useRef, useState} from "react";
+import {Swiper, SwiperClass, SwiperSlide} from "swiper/react";
 import AOS from "aos";
-import {PROJECTS} from "../../constants/projects.ts";
-import {OTHERS} from "../../constants/tech.ts";
-import {ACHIEVEMENTS} from "../../constants/achievements.ts";
+import {AppBar, Box, Tab, Tabs} from "@mui/material";
+import {Api, Cloud, SettingsEthernet} from "@mui/icons-material";
+import TechIcon from "./TechIcon.tsx";
+import {BACK_END, FRONT_END, OTHERS} from "../../constants/tech.ts";
+import TabPanel from "./TabPanel.tsx";
 
-type TabPanelProps = {
-    children: ReactNode;
-    value: number;
-    index: number;
-    direction: Direction;
-}
-
-function TabPanel({children, value, index, direction}: TabPanelProps) {
-    return (
-        <div id={`full-width-tabpanel-${index}`}
-             role="tabpanel"
-             hidden={value !== index}
-             aria-labelledby={`full-width-tab-${index}`}
-             dir={direction}>
-            {value === index && (
-                <Box sx={{p: {xs: 1, sm: 3}}}>
-                    {children}
-                </Box>
-            )}
-        </div>
-    );
-}
-
-export default function Portfolio() {
+export default function TechStacks() {
     const theme = useTheme();
     const [value, setValue] = useState(0);
     const swiperRef = useRef<SwiperClass | null>(null);
@@ -55,24 +28,17 @@ export default function Portfolio() {
     };
 
     return (
-        <div className="pb-[10%] md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portfolio">
-            {/* Header section - unchanged */}
-            <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
+        <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="TechStacks">
+            <div className="text-center pb-10"
+                 data-aos="fade-up"
+                 data-aos-duration="1000">
                 <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                    <span style={{
-                        color: '#6366f1',
-                        backgroundImage: 'linear-gradient(45deg, #6366f1 10%, #a855f7 93%)',
-                        WebkitBackgroundClip: 'text',
-                        backgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent'
-                    }}>
-                        Showcase
+                    <span className="bg-gradient-to-r from-indigo-500 to-purple-500 text-transparent bg-clip-text">
+                        Tech Stacks
                     </span>
                 </h2>
                 <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
-                    Explore my journey through projects, technical expertise and achievements.
-                    <br/>
-                    Each section represents a milestone in my learning path.
+                    Powering innovation with the best in modern technology.
                 </p>
             </div>
 
@@ -136,14 +102,14 @@ export default function Portfolio() {
                                   gap: "8px",
                               },
                           }}>
-                        <Tab icon={<Code className="mb-2 w-5 h-5 transition-all duration-300"/>}
-                             label="Projects"
+                        <Tab icon={<Api className="mb-2 w-5 h-5 transition-all duration-300"/>}
+                             label="Back-End"
                              id='full-width-tab-0' aria-controls='full-width-tabpanel-0'/>
-                        <Tab icon={<ViewModule className="mb-2 w-5 h-5 transition-all duration-300"/>}
-                             label="Tech Stacks"
+                        <Tab icon={<SettingsEthernet className="mb-2 w-5 h-5 transition-all duration-300"/>}
+                             label="Front-End"
                              id='full-width-tab-1' aria-controls='full-width-tabpanel-1'/>
-                        <Tab icon={<EmojiEvents className="mb-2 w-5 h-5 transition-all duration-300"/>}
-                             label="Achievements"
+                        <Tab icon={<Cloud className="mb-2 w-5 h-5 transition-all duration-300"/>}
+                             label="Others"
                              id='full-width-tab-2' aria-controls='full-width-tabpanel-2'/>
                     </Tabs>
                 </AppBar>
@@ -157,12 +123,12 @@ export default function Portfolio() {
                     <SwiperSlide>
                         <TabPanel value={value} index={0} direction={theme.direction}>
                             <div className="container mx-auto flex justify-center items-center overflow-hidden">
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
-                                    {PROJECTS.map((project, index) => (
-                                        <div key={project.id}
+                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
+                                    {BACK_END.map((stack, index) => (
+                                        <div key={index}
                                              data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
                                              data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                                            <ProjectCard project={project}/>
+                                            <TechIcon icon={stack.icon} name={stack.language}/>
                                         </div>
                                     ))}
                                 </div>
@@ -174,7 +140,7 @@ export default function Portfolio() {
                         <TabPanel value={value} index={1} direction={theme.direction}>
                             <div className="container mx-auto flex justify-center items-center overflow-hidden">
                                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
-                                    {OTHERS.map((stack, index) => (
+                                    {FRONT_END.map((stack, index) => (
                                         <div key={index}
                                              data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
                                              data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
@@ -189,12 +155,12 @@ export default function Portfolio() {
                     <SwiperSlide>
                         <TabPanel value={value} index={2} direction={theme.direction}>
                             <div className="container mx-auto flex justify-center items-center overflow-hidden">
-                                <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
-                                    {ACHIEVEMENTS.map((achievement, index) => (
+                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
+                                    {OTHERS.map((stack, index) => (
                                         <div key={index}
                                              data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
                                              data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                                            <AchievementCard achievement={achievement}/>
+                                            <TechIcon icon={stack.icon} name={stack.language}/>
                                         </div>
                                     ))}
                                 </div>
