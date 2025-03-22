@@ -7,7 +7,7 @@ export const ACHIEVEMENTS: Achievement[] = [
             `${import.meta.env.BASE_URL}achievements/chika-1.webp`,
             `${import.meta.env.BASE_URL}achievements/chika-2.webp`,
             `${import.meta.env.BASE_URL}achievements/chika-3.webp`,
-            `${import.meta.env.BASE_URL}achievements/chika-4.webp`,
+            `${import.meta.env.BASE_URL}achievements/chika-4.webp`
         ],
         title: 'CIC 2020',
         description: 'During my university years, I participated in a Startup Competition, CIC 2020, presenting a Smart Home ' +
@@ -23,7 +23,7 @@ export const ACHIEVEMENTS: Achievement[] = [
             `${import.meta.env.BASE_URL}achievements/thermalon-3.webp`,
             `${import.meta.env.BASE_URL}achievements/thermalon-4.webp`
         ],
-        title: 'ThermalON',
-        description: 'I was honored to receive a Certificate of Appreciation from Bosch for my contributions to the Thermal ON project. This project leveraged Micro Frontend technology to enhance scalability and modularity in web applications. Being part of this innovation-driven initiative allowed me to deepen my expertise in modern web architectures while collaborating with a talented team to deliver impactful solutions.'
+        title: 'Certificate of Appreciation',
+        description: 'I was honored to receive a Certificate of Appreciation from Bosch for my contributions to the ThermalON project. This project leveraged Micro Frontend technology to enhance scalability and modularity in web applications. Being part of this innovation-driven initiative allowed me to deepen my expertise in modern web architectures while collaborating with a talented team to deliver impactful solutions.'
     }
 ]
