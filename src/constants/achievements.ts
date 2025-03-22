@@ -3,14 +3,27 @@ import {Achievement} from "../models/achievement.ts";
 export const ACHIEVEMENTS: Achievement[] = [
     {
         id: '1',
-        imageUrl: `${import.meta.env.BASE_URL}achievements/chika.webp`,
+        imageUrl: [
+            `${import.meta.env.BASE_URL}achievements/chika-1.webp`,
+            `${import.meta.env.BASE_URL}achievements/chika-2.webp`,
+            `${import.meta.env.BASE_URL}achievements/chika-3.webp`,
+            `${import.meta.env.BASE_URL}achievements/chika-4.webp`,
+        ],
         title: 'CIC 2020',
-        description: 'A contest entered as a student'
+        description: 'During my university years, I participated in a Startup Competition, CIC 2020, presenting a Smart Home ' +
+            'project with an application to control smart home devices. While I did not win any prize but the experience was invaluable, ' +
+            'teaching me about product development, teamwork, and problem-solving. This journey fueled my passion for technology ' +
+            'and innovation, shaping my approach to building practical and scalable solutions.'
     },
     {
         id: '2',
-        imageUrl: `${import.meta.env.BASE_URL}achievements/thermalon.webp`,
+        imageUrl: [
+            `${import.meta.env.BASE_URL}achievements/thermalon-1.webp`,
+            `${import.meta.env.BASE_URL}achievements/thermalon-2.webp`,
+            `${import.meta.env.BASE_URL}achievements/thermalon-3.webp`,
+            `${import.meta.env.BASE_URL}achievements/thermalon-4.webp`
+        ],
         title: 'ThermalON',
-        description: 'First award in Bosch'
+        description: 'I was honored to receive a Certificate of Appreciation from Bosch for my contributions to the Thermal ON project. This project leveraged Micro Frontend technology to enhance scalability and modularity in web applications. Being part of this innovation-driven initiative allowed me to deepen my expertise in modern web architectures while collaborating with a talented team to deliver impactful solutions.'
     }
 ]

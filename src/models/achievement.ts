@@ -1,6 +1,6 @@
 export type Achievement = {
     id: string;
-    imageUrl: string;
+    imageUrl: string[];
     title: string;
     description: string;
     link?: string;

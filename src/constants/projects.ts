@@ -44,6 +44,7 @@ export const PROJECTS: Project[] = [
         imageUrl: `${import.meta.env.BASE_URL}projects/portfolio.webp`,
         title: "My Portfolio",
         description: "A place to showcase my projects and achievements.",
+        githubLink: "https://github.com/SyNguyen98/my-portfolio",
         techStack: [
             {icon: FaReact, name: "React"},
             {icon: RiTailwindCssFill, name: "Tailwind CSS"},

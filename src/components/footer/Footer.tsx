@@ -7,7 +7,7 @@ function Footer() {
                     © SyNguyen™ - A Guy Who Love Coding
                 </span>
                 <span className="max-w-1/3 sm:max-w-none text-xs sm:text-sm pb-4 text-gray-500 text-right dark:text-gray-400">
-                    Last updated on March 22th, 2025.
+                    Last updated on March 23th, 2025.
                 </span>
             </div>
         </footer>

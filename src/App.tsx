@@ -8,6 +8,7 @@ import Introduction from "./components/introduction/Introduction.tsx";
 import About from "./components/about/About.tsx";
 import Projects from "./components/projects/Projects.tsx";
 import ProjectDetail from "./components/project-detail/ProjectDetail.tsx";
+import Achievements from "./components/achievements/Achievements.tsx";
 import TechStacks from "./components/tech-stacks/TechStacks.tsx";
 import ContactPage from "./components/contact/Contact.tsx";
 import Footer from "./components/footer/Footer.tsx";
@@ -34,6 +35,7 @@ function App() {
                                 <Introduction/>
                                 <About/>
                                 <Projects/>
+                                <Achievements/>
                                 <TechStacks/>
                                 <ContactPage/>
                                 <Footer/>

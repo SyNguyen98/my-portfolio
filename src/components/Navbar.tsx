@@ -10,6 +10,7 @@ const Navbar = () => {
         {href: "#Home", label: "Home"},
         {href: "#About", label: "About"},
         {href: "#Projects", label: "Projects"},
+        {href: "#Achievements", label: "Achievements"},
         {href: "#TechStacks", label: "Tech Stacks"},
         {href: "#Contact", label: "Contact"},
     ];
