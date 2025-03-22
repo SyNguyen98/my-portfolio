@@ -7,9 +7,9 @@ import AnimatedBackground from './components/Background.tsx';
 import Introduction from "./components/introduction/Introduction.tsx";
 import About from "./components/about/About.tsx";
 import Projects from "./components/projects/Projects.tsx";
+import ProjectDetail from "./components/project-detail/ProjectDetail.tsx";
 import TechStacks from "./components/tech-stacks/TechStacks.tsx";
 import ContactPage from "./components/contact/Contact.tsx";
-import ProjectDetail from "./components/projects/ProjectDetail.tsx";
 import Footer from "./components/footer/Footer.tsx";
 import 'aos/dist/aos.css';
 
