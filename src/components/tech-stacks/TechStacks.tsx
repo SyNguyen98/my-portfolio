@@ -1,17 +1,15 @@
 import {useTheme} from "@mui/material/styles";
-import {SyntheticEvent, useEffect, useRef, useState} from "react";
-import {Swiper, SwiperClass, SwiperSlide} from "swiper/react";
+import {SyntheticEvent, useEffect, useState} from "react";
 import AOS from "aos";
 import {AppBar, Box, Tab, Tabs} from "@mui/material";
-import {Api, Cloud, SettingsEthernet} from "@mui/icons-material";
+import {Api, AutoAwesome, Cloud, SettingsEthernet} from "@mui/icons-material";
 import TechIcon from "./TechIcon.tsx";
-import {BACK_END, FRONT_END, OTHERS} from "../../constants/tech.ts";
 import TabPanel from "./TabPanel.tsx";
+import {BACK_END, FRONT_END, OTHERS} from "../../constants/tech.ts";
 
 export default function TechStacks() {
     const theme = useTheme();
     const [value, setValue] = useState(0);
-    const swiperRef = useRef<SwiperClass | null>(null);
 
     useEffect(() => {
         // Initialize AOS once
@@ -22,9 +20,6 @@ export default function TechStacks() {
 
     const handleChange = (_event: SyntheticEvent, newValue: number) => {
         setValue(newValue);
-        if (swiperRef.current) {
-            swiperRef.current.slideTo(newValue);
-        }
     };
 
     return (
@@ -37,8 +32,10 @@ export default function TechStacks() {
                         Tech Stacks
                     </span>
                 </h2>
-                <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
+                <p className="mt-2 text-gray-400 max-w-2xl mx-auto text-base sm:text-lg flex items-center justify-center gap-2">
+                    <AutoAwesome className="w-5 h-5 text-purple-400"/>
                     Powering innovation with the best in modern technology.
+                    <AutoAwesome className="w-5 h-5 text-purple-400"/>
                 </p>
             </div>
 
@@ -114,60 +111,47 @@ export default function TechStacks() {
                     </Tabs>
                 </AppBar>
 
-                <Swiper onSlideChange={(swiper) => setValue(swiper.activeIndex)}
-                        initialSlide={value}
-                        spaceBetween={50}
-                        slidesPerView={1}
-                        onSwiper={(swiper) => swiperRef.current = swiper}>
-
-                    <SwiperSlide>
-                        <TabPanel value={value} index={0} direction={theme.direction}>
-                            <div className="container mx-auto flex justify-center items-center overflow-hidden">
-                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
-                                    {BACK_END.map((stack, index) => (
-                                        <div key={index}
-                                             data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                                             data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                                            <TechIcon icon={stack.icon} name={stack.language}/>
-                                        </div>
-                                    ))}
+                <TabPanel value={value} index={0} direction={theme.direction}>
+                    <div className="container mx-auto flex justify-center items-center overflow-hidden">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
+                            {BACK_END.map((stack, index) => (
+                                <div key={index}
+                                     data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                                     data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
+                                    <TechIcon icon={stack.icon} name={stack.language}/>
                                 </div>
-                            </div>
-                        </TabPanel>
-                    </SwiperSlide>
+                            ))}
+                        </div>
+                    </div>
+                </TabPanel>
 
-                    <SwiperSlide>
-                        <TabPanel value={value} index={1} direction={theme.direction}>
-                            <div className="container mx-auto flex justify-center items-center overflow-hidden">
-                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
-                                    {FRONT_END.map((stack, index) => (
-                                        <div key={index}
-                                             data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                                             data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                                            <TechIcon icon={stack.icon} name={stack.language}/>
-                                        </div>
-                                    ))}
+                <TabPanel value={value} index={1} direction={theme.direction}>
+                    <div className="container mx-auto flex justify-center items-center overflow-hidden">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
+                            {FRONT_END.map((stack, index) => (
+                                <div key={index}
+                                     data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                                     data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
+                                    <TechIcon icon={stack.icon} name={stack.language}/>
                                 </div>
-                            </div>
-                        </TabPanel>
-                    </SwiperSlide>
+                            ))}
+                        </div>
+                    </div>
+                </TabPanel>
 
-                    <SwiperSlide>
-                        <TabPanel value={value} index={2} direction={theme.direction}>
-                            <div className="container mx-auto flex justify-center items-center overflow-hidden">
-                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
-                                    {OTHERS.map((stack, index) => (
-                                        <div key={index}
-                                             data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                                             data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                                            <TechIcon icon={stack.icon} name={stack.language}/>
-                                        </div>
-                                    ))}
+                <TabPanel value={value} index={2} direction={theme.direction}>
+                    <div className="container mx-auto flex justify-center items-center overflow-hidden">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
+                            {OTHERS.map((stack, index) => (
+                                <div key={index}
+                                     data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                                     data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
+                                    <TechIcon icon={stack.icon} name={stack.language}/>
                                 </div>
-                            </div>
-                        </TabPanel>
-                    </SwiperSlide>
-                </Swiper>
+                            ))}
+                        </div>
+                    </div>
+                </TabPanel>
             </Box>
         </div>
     );

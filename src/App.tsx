@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar.tsx";
 import AnimatedBackground from './components/Background.tsx';
 import Introduction from "./components/introduction/Introduction.tsx";
 import About from "./components/about/About.tsx";
-import Portfolio from "./components/portfolio/Portfolio.tsx";
+import Projects from "./components/projects/Projects.tsx";
 import TechStacks from "./components/tech-stacks/TechStacks.tsx";
 import ContactPage from "./components/contact/Contact.tsx";
 import ProjectDetail from "./components/projects/ProjectDetail.tsx";
@@ -33,7 +33,7 @@ function App() {
                                 <AnimatedBackground/>
                                 <Introduction/>
                                 <About/>
-                                <Portfolio/>
+                                <Projects/>
                                 <TechStacks/>
                                 <ContactPage/>
                                 <Footer/>

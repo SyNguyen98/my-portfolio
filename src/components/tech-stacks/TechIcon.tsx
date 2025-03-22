@@ -6,7 +6,7 @@ type Props = {
 const TechIcon = ({icon, name}: Props) => {
     return (
         <div
-            className="h-32 w-40 md:h-40 md:w-52 group rounded-2xl bg-slate-800/50 hover:bg-slate-700/50 transition-all duration-300 ease-in-out flex flex-col items-center justify-center gap-3 hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl">
+            className="h-32 w-[40vw] md:h-40 md:w-[10vw] group rounded-2xl bg-slate-800/50 hover:bg-slate-700/50 transition-all duration-300 ease-in-out flex flex-col items-center justify-center gap-3 hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl">
             <div className="relative">
                 <div
                     className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full opacity-0 group-hover:opacity-50 blur transition duration-300"></div>
