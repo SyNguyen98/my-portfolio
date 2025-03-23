@@ -1,12 +1,12 @@
 name: Terraform Apply
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:  # Enables manual triggering from GitHub UI
 
 permissions:
+  id-token: write
   contents: read
+  actions: write  # Needed to update secrets
 
 jobs:
   terraform:
