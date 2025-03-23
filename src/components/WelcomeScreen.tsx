@@ -147,7 +147,7 @@ const WelcomeScreen = ({onLoadingComplete}: {onLoadingComplete: (loadingComplete
                                         variants={childVariants}
                                         data-aos="fade-up"
                                         data-aos-delay="1200">
-                                <a href="https://synguyen98.github.io/my-portfolio"
+                                <a href="https://www.synguyen.info.vn/"
                                    className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 rounded-full relative group hover:scale-105 transition-transform duration-300"
                                    target="_blank"
                                    rel="noopener noreferrer">
@@ -156,7 +156,7 @@ const WelcomeScreen = ({onLoadingComplete}: {onLoadingComplete: (loadingComplete
                                         <Language className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600"/>
                                         <span
                                             className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                                            <TypewriterEffect text="github.io/my-portfolio"/>
+                                            <TypewriterEffect text="synguyen.info.vn"/>
                                         </span>
                                     </div>
                                 </a>
