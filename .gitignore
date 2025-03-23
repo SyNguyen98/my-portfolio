@@ -24,3 +24,8 @@ dist-ssr
 *.sw?
 
 coverage/
+
+# Terraform
+terraform/terraform.tfvars
+terraform/*.tfstate
+terraform/*.tfstate.backup
