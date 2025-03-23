@@ -1,1 +1,0 @@
-github_token = "$GITHUB_TOKEN"
