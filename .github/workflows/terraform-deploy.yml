@@ -35,6 +35,7 @@ jobs:
         working-directory: terraform
         env:
           TF_VAR_subscription_id: ${{ env.AZURE_SUBSCRIPTION_ID }}
+          TF_VAR_github_token: ${{ secrets.GH_TOKEN }}
         run: terraform plan -out=tfplan
 
       - name: Terraform Apply
