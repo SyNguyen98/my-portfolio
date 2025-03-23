@@ -130,7 +130,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Overlay */}
-            <div className={`md:hidden h-1/2 fixed inset-0 bg-[#030014] transition-all duration-300 ease-in-out ${
+            <div className={`md:hidden h-3/4 fixed inset-0 bg-[#030014] transition-all duration-300 ease-in-out ${
                 isOpen
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-[-100%] pointer-events-none"

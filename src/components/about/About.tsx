@@ -59,7 +59,7 @@ const ProfileImage = memo(() => (
                     <div
                         className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block"/>
 
-                    <img src={`${import.meta.env.BASE_URL}Avatar.webp`}
+                    <img src='https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/Avatar.webp?raw=true'
                          alt="Profile"
                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
                          loading="lazy"/>
@@ -230,7 +230,7 @@ function About() {
 
                         <div
                             className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-                            <a href="/public/files/cv.pdf" download="cv.pdf" className="w-full lg:w-auto">
+                            <a href="https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/files/cv.pdf?raw=true" download="cv.pdf" className="w-full lg:w-auto">
                                 <button data-aos="fade-up"
                                         data-aos-duration="800"
                                         className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl animate-bounce-slow cursor-pointer">

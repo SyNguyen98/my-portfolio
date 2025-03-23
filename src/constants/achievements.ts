@@ -4,10 +4,10 @@ export const ACHIEVEMENTS: Achievement[] = [
     {
         id: '1',
         imageUrl: [
-            `${import.meta.env.BASE_URL}achievements/chika-1.webp`,
-            `${import.meta.env.BASE_URL}achievements/chika-2.webp`,
-            `${import.meta.env.BASE_URL}achievements/chika-3.webp`,
-            `${import.meta.env.BASE_URL}achievements/chika-4.webp`
+            'https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/achievements/chika-1.webp?raw=true',
+            'https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/achievements/chika-2.webp?raw=true',
+            'https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/achievements/chika-3.webp?raw=true',
+            'https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/achievements/chika-4.webp?raw=true'
         ],
         title: 'CIC 2020',
         description: 'During my university years, I participated in a Startup Competition, CIC 2020, presenting a Smart Home ' +
@@ -18,10 +18,10 @@ export const ACHIEVEMENTS: Achievement[] = [
     {
         id: '2',
         imageUrl: [
-            `${import.meta.env.BASE_URL}achievements/thermalon-1.webp`,
-            `${import.meta.env.BASE_URL}achievements/thermalon-2.webp`,
-            `${import.meta.env.BASE_URL}achievements/thermalon-3.webp`,
-            `${import.meta.env.BASE_URL}achievements/thermalon-4.webp`
+            'https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/achievements/thermalon-1.webp?raw=true',
+            'https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/achievements/thermalon-2.webp?raw=true',
+            'https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/achievements/thermalon-3.webp?raw=true',
+            'https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/achievements/thermalon-4.webp?raw=true'
         ],
         title: 'Certificate of Appreciation',
         description: 'I was honored to receive a Certificate of Appreciation from Bosch for my contributions to the ThermalON project. This project leveraged Micro Frontend technology to enhance scalability and modularity in web applications. Being part of this innovation-driven initiative allowed me to deepen my expertise in modern web architectures while collaborating with a talented team to deliver impactful solutions.'

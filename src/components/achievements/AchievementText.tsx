@@ -7,8 +7,8 @@ type Props = {
 
 const AchievementText = ({achievement, textPosition}: Props) => {
     return (
-        <div className={`space-y-6 text-center lg:text-${textPosition}`}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold"
+        <div className='space-y-6'>
+            <h2 className={`text-center lg:text-${textPosition} text-3xl sm:text-4xl lg:text-5xl font-bold`}
                 data-aos="fade-left"
                 data-aos-duration="1000">
                             <span className="block mt-2 text-gray-200"
