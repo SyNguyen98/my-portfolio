@@ -29,4 +29,5 @@ export const OTHERS = [
     {icon: "terraform.svg", language: "Terraform"},
     {icon: "docker.svg", language: "Docker"},
     {icon: "github.svg", language: "GitHub"},
+    {icon: "n8n.webp", language: "n8n"},
 ];
