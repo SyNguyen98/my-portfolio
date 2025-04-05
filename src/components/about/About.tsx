@@ -1,36 +1,11 @@
-import {useEffect, memo, useMemo} from "react"
-import {
-    Description,
-    Code,
-    EmojiEvents,
-    Public,
-    ArrowUpward,
-    AutoAwesome,
-    SvgIconComponent
-} from '@mui/icons-material';
+import {memo, useEffect, useMemo} from "react"
+import {Code, ContactPage, Description, EmojiEvents, Public} from '@mui/icons-material';
 import AOS from 'aos'
 import {PROJECTS} from "../../constants/projects.ts";
 import {ACHIEVEMENTS} from "../../constants/achievements.ts";
-
-// Memoized Components
-const Header = memo(() => (
-    <div className="text-center lg:mb-8 mb-2 px-[5%]">
-        <div className="inline-block relative group">
-            <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]"
-                data-aos="zoom-in-up"
-                data-aos-duration="600">
-                About Me
-            </h2>
-        </div>
-        <p className="mt-2 text-gray-400 max-w-2xl mx-auto text-base sm:text-lg flex items-center justify-center gap-2"
-           data-aos="zoom-in-up"
-           data-aos-duration="800">
-            <AutoAwesome className="w-5 h-5 text-purple-400"/>
-            Transforming ideas into digital experiences
-            <AutoAwesome className="w-5 h-5 text-purple-400"/>
-        </p>
-    </div>
-));
+import {Trans, useTranslation} from "react-i18next";
+import SectionTitle from "../SectionTitle.tsx";
+import StatCard from "./StatCard.tsx";
 
 const ProfileImage = memo(() => (
     <div className="flex justify-end items-center sm:p-12 sm:py-0 sm:pb-0 p-0 py-2 pb-2">
@@ -80,56 +55,9 @@ const ProfileImage = memo(() => (
     </div>
 ));
 
-const StatCard = memo(({icon: Icon, color, value, label, description, animation}: {
-    icon: SvgIconComponent;
-    color: string;
-    value: number;
-    label: string;
-    description: string;
-    animation: string;
-}) => (
-    <div data-aos={animation} data-aos-duration={1300} className="relative group">
-        <div
-            className="relative z-10 bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-white/10 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
-            <div
-                className={`absolute -z-10 inset-0 bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}/>
-
-            <div className="flex items-center justify-between mb-4">
-                <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center bg-white/10 transition-transform group-hover:rotate-6">
-                    <Icon className="w-8 h-8 text-white"/>
-                </div>
-                <span className="text-4xl font-bold text-white"
-                      data-aos="fade-up-left"
-                      data-aos-duration="1500"
-                      data-aos-anchor-placement="top-bottom">
-                    {value}
-                </span>
-            </div>
-
-            <div>
-                <p className="text-sm uppercase tracking-wider text-gray-300 mb-2"
-                   data-aos="fade-up"
-                   data-aos-duration="800"
-                   data-aos-anchor-placement="top-bottom">
-                    {label}
-                </p>
-                <div className="flex items-center justify-between">
-                    <p className="text-xs text-gray-400"
-                       data-aos="fade-up"
-                       data-aos-duration="1000"
-                       data-aos-anchor-placement="top-bottom">
-                        {description}
-                    </p>
-                    <ArrowUpward className="w-4 h-4 text-white/50 group-hover:text-white transition-colors"/>
-                </div>
-            </div>
-        </div>
-    </div>
-));
-
 function About() {
-    // Memoized calculations
+    const {t} = useTranslation();
+    
     const {yearExperience} = useMemo(() => {
         const startDate = new Date("2020-03-02");
         const today = new Date();
@@ -140,6 +68,33 @@ function About() {
             yearExperience: experience
         };
     }, []);
+
+    const statsData = [
+        {
+            icon: Public,
+            color: "from-[#6366f1] to-[#a855f7]",
+            value: yearExperience,
+            label: t('about_me.stats.experience.title'),
+            description: t('about_me.stats.experience.description'),
+            animation: "fade-left",
+        },
+        {
+            icon: Code,
+            color: "from-[#6366f1] to-[#a855f7]",
+            value: PROJECTS.length,
+            label: t('about_me.stats.projects.title'),
+            description: t('about_me.stats.projects.description'),
+            animation: "fade-right",
+        },
+        {
+            icon: EmojiEvents,
+            color: "from-[#a855f7] to-[#6366f1]",
+            value: ACHIEVEMENTS.length,
+            label: t('about_me.stats.achievements.title'),
+            description: t('about_me.stats.achievements.description'),
+            animation: "fade-up",
+        }
+    ];
 
     // Optimized AOS initialization
     useEffect(() => {
@@ -165,39 +120,11 @@ function About() {
         };
     }, []);
 
-    // Memoized stats data
-    const statsData = useMemo(() => [
-        {
-            icon: Public,
-            color: "from-[#6366f1] to-[#a855f7]",
-            value: yearExperience,
-            label: "Years of Experience",
-            description: "Continuous learning journey",
-            animation: "fade-left",
-        },
-        {
-            icon: Code,
-            color: "from-[#6366f1] to-[#a855f7]",
-            value: PROJECTS.length,
-            label: "Total Projects",
-            description: "Innovative web solutions crafted",
-            animation: "fade-right",
-        },
-        {
-            icon: EmojiEvents,
-            color: "from-[#a855f7] to-[#6366f1]",
-            value: ACHIEVEMENTS.length,
-            label: "Achievements",
-            description: "Professional skills validated",
-            animation: "fade-up",
-        }
-    ], [yearExperience]);
-
     return (
         <div className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0"
              id="About">
 
-            <Header/>
+            <SectionTitle title={t('about_me.title')} subTitle={t('about_me.sub_title')}/>
 
             <div className="w-full mx-auto pt-8 sm:pt-12 relative">
                 <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -207,25 +134,19 @@ function About() {
                             data-aos-duration="1000">
                             <span
                                 className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                                Hello, I am
+                                {t('about_me.hello')}
                             </span>
-                            <span className="block mt-2 text-gray-200"
+                            <span className="block mt-4 text-gray-200"
                                   data-aos="fade-right"
                                   data-aos-duration="1300">
-                                Nguyen Hong Sy Nguyen
+                                {t('about_me.name')}
                             </span>
                         </h2>
 
                         <p className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0"
                            data-aos="fade-right"
                            data-aos-duration="1500">
-                            A Software Engineer at <b>Bosch Global Software Technologies Vietnam</b>, passionate about
-                            technology and continuous learning.
-                            I love exploring new tech stacks and building applications that not only solve real-world
-                            problems but also serve my own.
-                            <br/>
-                            For me, coding is more than just work — it’s a way to create, innovate and bring ideas to
-                            life. 🚀
+                            <Trans i18nKey="about_me.description" components={{ b: <strong /> }} />
                         </p>
 
                         <div
@@ -235,15 +156,15 @@ function About() {
                                         data-aos-duration="800"
                                         className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl animate-bounce-slow cursor-pointer">
                                     <Description className="w-4 h-4 sm:w-5 sm:h-5"/>
-                                    Download CV
+                                    {t('about_me.buttons.download')}
                                 </button>
                             </a>
-                            <a href="#Projects" className="w-full lg:w-auto">
+                            <a href="#Contact" className="w-full lg:w-auto">
                                 <button data-aos="fade-up"
                                         data-aos-duration="1000"
                                         className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10 animate-bounce-slow delay-200 cursor-pointer">
-                                    <Code className="w-4 h-4 sm:w-5 sm:h-5"/>
-                                    View Projects
+                                    <ContactPage className="w-4 h-4 sm:w-5 sm:h-5"/>
+                                    {t('about_me.buttons.contact')}
                                 </button>
                             </a>
                         </div>
@@ -254,7 +175,7 @@ function About() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
                     {statsData.map((stat) => (
-                        <StatCard key={stat.label} {...stat} />
+                        <StatCard key={stat.label} {...stat}/>
                     ))}
                 </div>
             </div>
