@@ -1,4 +1,4 @@
-import {Fragment, useState} from "react";
+import {useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router";
 import {AnimatePresence} from "framer-motion";
 import WelcomeScreen from "./components/WelcomeScreen.tsx";
@@ -21,7 +21,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={
-                    <Fragment>
+                    <>
                         <AnimatePresence mode="wait">
                             {showWelcome && (
                                 <WelcomeScreen onLoadingComplete={() => setShowWelcome(false)}/>
@@ -41,13 +41,13 @@ function App() {
                                 <Footer/>
                             </center>
                         )}
-                    </Fragment>
+                    </>
                 }/>
                 <Route path="/projects/:id" element={
-                    <Fragment>
+                    <>
                         <ProjectDetail/>
                         <Footer/>
-                    </Fragment>
+                    </>
                 }/>
             </Routes>
         </BrowserRouter>
