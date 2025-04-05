@@ -1,18 +1,25 @@
-import {useState, useEffect, MouseEvent} from "react";
-import {Menu, Close} from "@mui/icons-material";
+import {useState, useEffect, MouseEvent, useContext} from "react";
+import {Menu, Close, Language} from "@mui/icons-material";
+import {InputAdornment, MenuItem, Select, SelectChangeEvent} from "@mui/material";
+import {useTranslation} from "react-i18next";
+import {LanguageContext} from "../providers/LanguageProvider";
+
 
 const Navbar = () => {
+    const {language, changeLanguage} = useContext(LanguageContext);
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState("Home");
 
+    const {t} = useTranslation();
+
     const navItems = [
-        {href: "#Home", label: "Home"},
-        {href: "#About", label: "About"},
-        {href: "#Projects", label: "Projects"},
-        {href: "#Achievements", label: "Achievements"},
-        {href: "#TechStacks", label: "Tech Stacks"},
-        {href: "#Contact", label: "Contact"},
+        {href: "#Home", label: t("navbar.homepage")},
+        {href: "#About", label: t("navbar.about")},
+        {href: "#Projects", label: t("navbar.projects")},
+        {href: "#Achievements", label: t("navbar.achievements")},
+        {href: "#TechStacks", label: t("navbar.tech_stacks")},
+        {href: "#Contact", label: t("navbar.contact")},
     ];
 
     useEffect(() => {
@@ -68,6 +75,10 @@ const Navbar = () => {
         setIsOpen(false);
     };
 
+    const handleChangeLanguage = (event: SelectChangeEvent) => {
+        changeLanguage(event.target.value);
+    }
+
     return (
         <nav className={`fixed w-full top-0 z-50 transition-all duration-500 ${
             isOpen
@@ -90,7 +101,7 @@ const Navbar = () => {
                     {/* Desktop Navigation */}
                     <div className="hidden md:block">
                         <div className="ml-8 flex items-center space-x-8">
-                            {navItems.map((item) => (
+                            {navItems.map((item) =>
                                 <a key={item.label}
                                    href={item.href}
                                    onClick={(e) => scrollToSection(e, item.href)}
@@ -109,7 +120,45 @@ const Navbar = () => {
                                                 : "scale-x-0 group-hover:scale-x-100"
                                         }`}/>
                                 </a>
-                            ))}
+                            )}
+                            <Select autoWidth
+                                    value={language}
+                                    onChange={handleChangeLanguage}
+                                    startAdornment={
+                                        <InputAdornment position="start">
+                                            <Language sx={{color: "#e2d3fd"}}/>
+                                        </InputAdornment>
+                                    }
+                                    sx={{
+                                        color: "#e2d3fd",
+                                        "& .MuiOutlinedInput-notchedOutline": {
+                                            border: "none", // Removes the outline border
+                                        },
+                                        "&:hover .MuiOutlinedInput-notchedOutline": {
+                                            border: "none", // Removes the border on hover
+                                        },
+                                        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                                            border: "none", // Removes the border when focused
+                                        },
+                                        "& .MuiSelect-icon": {
+                                            color: "#e2d3fd",
+                                        }
+                                    }}
+                                    MenuProps={{
+                                        PaperProps: {
+                                            sx: {
+                                                backgroundColor: "rgb(255 255 255 / 0.1)",
+                                                color: "#a855f7",
+                                            },
+                                        },
+                                    }}>
+                                <MenuItem value="vn">
+                                    VI
+                                </MenuItem>
+                                <MenuItem value="en">
+                                    EN
+                                </MenuItem>
+                            </Select>
                         </div>
                     </div>
 
@@ -159,7 +208,6 @@ const Navbar = () => {
                 </div>
             </div>
         </nav>
-
     );
 };
 
