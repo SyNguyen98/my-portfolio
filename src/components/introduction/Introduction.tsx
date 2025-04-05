@@ -1,4 +1,5 @@
 import {memo, useCallback, useEffect, useState} from "react"
+import {useTranslation} from "react-i18next";
 import {GitHub, Instagram, Link as ExternalLink, LinkedIn, Mail} from '@mui/icons-material';
 import {DotLottieReact} from '@lottiefiles/dotlottie-react'
 import AOS from 'aos'
@@ -12,8 +13,6 @@ import SocialLink from "./SocialLink.tsx";
 const TYPING_SPEED = 50;
 const ERASING_SPEED = 20;
 const PAUSE_DURATION = 2000;
-const WORDS = ["From A Physics Student", "To A Software Engineer"];
-const SLOGAN = "Passionate about technology, crafting websites that inspire and empower others.";
 const TECH_STACK = ["React", "Typescript", "Spring Boot", "Microsoft Azure"];
 const SOCIAL_LINKS = [
     {icon: GitHub, link: GITHUB_URL},
@@ -28,6 +27,10 @@ const Introduction = () => {
     const [charIndex, setCharIndex] = useState(0)
     const [isLoaded, setIsLoaded] = useState(false)
     const [isHovering, setIsHovering] = useState(false)
+
+    const {t} = useTranslation();
+
+    const WORDS = [t('homepage.from'), t('homepage.to')];
 
     // Optimize AOS initialization
     useEffect(() => {
@@ -120,7 +123,7 @@ const Introduction = () => {
                                 <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
                                    data-aos="fade-up"
                                    data-aos-delay="1000">
-                                    {SLOGAN}
+                                    {t('homepage.slogan')}
                                 </p>
 
                                 {/* Tech Stack */}
@@ -137,8 +140,8 @@ const Introduction = () => {
                                 {/* CTA Buttons */}
                                 <div className="flex flex-row gap-3 w-full justify-start" data-aos="fade-up"
                                      data-aos-delay="1400">
-                                    <CTAButton href="#Projects" text="Projects" icon={ExternalLink}/>
-                                    <CTAButton href="#Contact" text="Contact" icon={Mail}/>
+                                    <CTAButton href="#Projects" text={t('navbar.projects')} icon={ExternalLink}/>
+                                    <CTAButton href="#Contact" text={t('navbar.contact')} icon={Mail}/>
                                 </div>
 
                                 {/* Social Links */}
