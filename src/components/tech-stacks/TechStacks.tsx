@@ -1,8 +1,10 @@
 import {useTheme} from "@mui/material/styles";
 import {SyntheticEvent, useEffect, useState} from "react";
+import {useTranslation} from "react-i18next";
 import AOS from "aos";
 import {AppBar, Box, Tab, Tabs} from "@mui/material";
-import {Api, AutoAwesome, Cloud, SettingsEthernet} from "@mui/icons-material";
+import {Api, Cloud, SettingsEthernet} from "@mui/icons-material";
+import SectionTitle from "../SectionTitle.tsx";
 import TechIcon from "./TechIcon.tsx";
 import TabPanel from "./TabPanel.tsx";
 import {BACK_END, FRONT_END, OTHERS} from "../../constants/tech.ts";
@@ -10,6 +12,8 @@ import {BACK_END, FRONT_END, OTHERS} from "../../constants/tech.ts";
 export default function TechStacks() {
     const theme = useTheme();
     const [value, setValue] = useState(0);
+
+    const {t} = useTranslation();
 
     useEffect(() => {
         // Initialize AOS once
@@ -24,20 +28,7 @@ export default function TechStacks() {
 
     return (
         <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="TechStacks">
-            <div className="text-center pb-10"
-                 data-aos="fade-up"
-                 data-aos-duration="1000">
-                <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                    <span className="bg-gradient-to-r from-indigo-500 to-purple-500 text-transparent bg-clip-text">
-                        Tech Stacks
-                    </span>
-                </h2>
-                <p className="mt-2 text-gray-400 max-w-2xl mx-auto text-base sm:text-lg flex items-center justify-center gap-2">
-                    <AutoAwesome className="w-5 h-5 text-purple-400"/>
-                    Powering innovation with the best in modern technology.
-                    <AutoAwesome className="w-5 h-5 text-purple-400"/>
-                </p>
-            </div>
+            <SectionTitle title={t('tech_stacks.title')} subTitle={t('tech_stacks.sub_title')}/>
 
             <Box sx={{width: "100%"}}>
                 {/* AppBar and Tabs section - unchanged */}
@@ -100,13 +91,13 @@ export default function TechStacks() {
                               },
                           }}>
                         <Tab icon={<Api className="mb-2 w-5 h-5 transition-all duration-300"/>}
-                             label="Back-End"
+                             label={t('tech_stacks.backend')}
                              id='full-width-tab-0' aria-controls='full-width-tabpanel-0'/>
                         <Tab icon={<SettingsEthernet className="mb-2 w-5 h-5 transition-all duration-300"/>}
-                             label="Front-End"
+                             label={t('tech_stacks.frontend')}
                              id='full-width-tab-1' aria-controls='full-width-tabpanel-1'/>
                         <Tab icon={<Cloud className="mb-2 w-5 h-5 transition-all duration-300"/>}
-                             label="Others"
+                             label={t('tech_stacks.others')}
                              id='full-width-tab-2' aria-controls='full-width-tabpanel-2'/>
                     </Tabs>
                 </AppBar>

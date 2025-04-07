@@ -30,4 +30,5 @@ export const OTHERS = [
     {icon: "docker.svg", language: "Docker"},
     {icon: "github.svg", language: "GitHub"},
     {icon: "n8n.webp", language: "n8n"},
+    {icon: "figma.svg", language: "Figma"},
 ];

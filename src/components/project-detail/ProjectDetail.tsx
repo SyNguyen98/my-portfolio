@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router";
+import {useTranslation} from "react-i18next";
 import {ArrowBack, ChevronRight, Code, GitHub, OpenInNew, Star} from '@mui/icons-material';
 import {Project} from "../../models/project.ts";
 import {PROJECTS} from "../../constants/projects.ts";
@@ -12,6 +13,8 @@ function ProjectDetail() {
 
     const {id} = useParams();
     const navigate = useNavigate();
+
+    const {t} = useTranslation();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -42,13 +45,13 @@ function ProjectDetail() {
                                 <ArrowBack
                                     className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform"/>
                                 <span>
-                                    Back
+                                    {t('projects.back_btn')}
                                 </span>
                             </button>
                             <div
                                 className="flex items-center space-x-1 md:space-x-2 text-sm md:text-base text-white/50">
                                 <span>
-                                    Projects
+                                    {t('projects.title')}
                                 </span>
                                 <ChevronRight className="w-3 h-3 md:w-4 md:h-4"/>
                                 <span className="text-white/90 truncate">
@@ -73,7 +76,7 @@ function ProjectDetail() {
 
                                 <div className="prose prose-invert max-w-none">
                                     <p className="text-base md:text-lg text-gray-300/90 leading-relaxed">
-                                        {project.description}
+                                        {t(project.description)}
                                     </p>
                                 </div>
 
@@ -91,7 +94,7 @@ function ProjectDetail() {
                                             <OpenInNew
                                                 className="relative w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform"/>
                                             <span className="relative font-medium">
-                                                Live Demo
+                                                {t('projects.demo_btn')}
                                             </span>
                                         </a>
                                     )}
@@ -115,7 +118,7 @@ function ProjectDetail() {
                                 <div className="space-y-4 md:space-y-6">
                                     <h3 className="text-lg md:text-xl font-semibold text-white/90 mt-[3rem] md:mt-0 flex items-center gap-2 md:gap-3">
                                         <Code className="w-4 h-4 md:w-5 md:h-5 text-blue-400"/>
-                                        Technologies Used
+                                        {t('projects.tech_used')}
                                     </h3>
                                     <div className="flex flex-wrap gap-2 md:gap-3">
                                         {project.techStack.map((tech, index) => (
@@ -143,7 +146,7 @@ function ProjectDetail() {
                                     <h3 className="text-xl font-semibold text-white/90 flex items-center gap-3">
                                         <Star
                                             className="w-5 h-5 text-yellow-400 group-hover:rotate-[20deg] transition-transform duration-300"/>
-                                        Key Features
+                                        {t('projects.features')}
                                     </h3>
                                     <ul className="list-none space-y-2">
                                         {project.features.map((feature, index) => (

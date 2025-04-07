@@ -1,0 +1,116 @@
+{
+  "language": "Language",
+  "navbar": {
+    "homepage": "Home",
+    "about": "About Me",
+    "projects": "Projects",
+    "achievements": "Achievements",
+    "tech_stacks": "Tech Stack",
+    "contact": "Contact"
+  },
+  "homepage": {
+    "ready_innovation": "Ready to Innovate",
+    "above": "Software",
+    "below": "Engineer",
+    "from": "From A Physics Student",
+    "to": "To A Software Engineer",
+    "slogan": "Passionate about technology, crafting websites that inspire and empower others."
+  },
+  "about_me": {
+    "title": "About Me",
+    "sub_title": "Transforming ideas into digital experiences",
+    "hello": "Hello, I'm",
+    "name": "Nguyen Hong Sy Nguyen",
+    "description": "A Software Engineer at <b>Bosch Global Software Technologies Vietnam</b>, passionate about technology and continuous learning. I love exploring new tech stacks and building applications that not only solve real-world problems but also serve my own.\nFor me, coding is more than just work — it’s a way to create, innovate and bring ideas to life. \uD83D\uDE80",
+    "buttons": {
+      "download": "Download CV",
+      "contact": "Contact Me"
+    },
+    "stats": {
+      "experience": {
+        "title": "Experience",
+        "description": "Continuous learning journey"
+      },
+      "projects": {
+        "title": "Total Projects",
+        "description": "Innovative web solutions crafted"
+      },
+      "achievements": {
+        "title": "Achievements",
+        "description": "Professional skills validated"
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "sub_title": "Bringing ideas to life with innovative and impactful projects",
+    "detail_btn": "Details",
+    "demo_btn": "Live Demo",
+    "back_btn": "Back",
+    "tech_used": "Technologies Used",
+    "technologies": "Total Technologies",
+    "features": "Key Features",
+    "list": {
+      "chika": {
+        "title": "Chika Web App",
+        "description": "A student project, the beginning of everything",
+        "features": {
+          "1": "Provide information for those interested in smart homes.",
+          "2": "Offer an interface and features that allow administrators to manage users and smart home products.",
+          "3": "Provide an interface and features that enable users to manage and control home devices remotely in real time.",
+          "4": "Help users create scheduled automation scenarios for devices."
+        }
+      },
+      "memoria": {
+        "title": "MEMORIA",
+        "description": "A website storages all your memory resources",
+        "features": {
+          "1": "Capture meaningful memories through each photo, turning every moment into a precious story.",
+          "2": "Save happy moments with family and friends, so memories remain intact even as time passes.",
+          "3": "Pin locations to remember the places you've been, preserving every unforgettable journey."
+        }
+      },
+      "portfolio": {
+        "title": "My Portfolio",
+        "description": "A place to showcase my projects and achievements",
+        "features": {
+          "1": "Highlight my projects, accomplishments, and the impact I've made through my work.",
+          "2": "Serve as a professional hub where potential employers and collaborators can explore my skills and experience.",
+          "3": "Enable seamless communication by allowing visitors to contact me directly through the website."
+        }
+      }
+    }
+  },
+  "achievements": {
+    "title": "Achievements",
+    "sub_title": "Turning challenges into milestones, one achievement at a time",
+    "list": {
+      "cic": {
+        "description": "During my university years, I participated in a Startup Competition, CIC 2020, presenting a Smart Home project with an application to control smart home devices. While I did not win any prize but the experience was invaluable, teaching me about product development, teamwork, and problem-solving. This journey fueled my passion for technology and innovation, shaping my approach to building practical and scalable solutions."
+      },
+      "certification": {
+        "description": "I was honored to receive a \"Certificate of Appreciation\" from Bosch for my contributions to the ThermalON project. This project leveraged Micro Frontend technology to enhance scalability and modularity in web applications. Being part of this innovation-driven initiative allowed me to deepen my expertise in modern web architectures while collaborating with a talented team to deliver impactful solutions."
+      },
+      "udemy": {
+        "description": "Throughout my self-learning journey and efforts to enhance my professional skills, I have completed various high-quality courses on Udemy and earned certificates in web development, backend programming, and modern technologies such as React, Spring Boot, Docker, and CI/CD. These certificates reflect my continuous learning mindset and commitment to staying up to date with the latest industry practices, enabling me to build effective and optimized software solutions."
+      }
+    }
+  },
+  "tech_stacks": {
+    "title": "Tech Stack",
+    "sub_title": "Powering innovation with the best in modern technology",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "others": "Others"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "sub_title": "Want to know more about me? Send an email or connect with me via any social media",
+    "let_connect": "Let's Connect",
+    "on_linkedin": "on LinkedIn"
+  },
+  "footer": {
+    "love_code": "A Guy Who Love Coding",
+    "last_update": "Last updated on "
+  }
+}

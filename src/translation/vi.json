@@ -1,0 +1,116 @@
+{
+  "language": "Ngôn ngữ",
+  "navbar": {
+    "homepage": "Trang Chủ",
+    "about": "Về Tôi",
+    "projects": "Dự Án",
+    "achievements": "Thành Tựu",
+    "tech_stacks": "Công Nghệ",
+    "contact": "Liên Hệ"
+  },
+  "homepage": {
+    "ready_innovation": "Sẵn Sàng Đổi Mới",
+    "above": "Kỹ Sư",
+    "below": "Phần Mềm",
+    "from": "Từ Một Sinh Viên Vật Lý",
+    "to": "Cho Đến Một Kỹ Sư Phần Mềm",
+    "slogan": "Đam mê công nghệ, tạo ra những trang web truyền cảm hứng cho mọi người."
+  },
+  "about_me": {
+    "title": "Về Tôi",
+    "sub_title": "Biến những ý tưởng thành trải nghiệm số",
+    "hello": "Xin chào, tôi là",
+    "name": "Nguyễn Hồng Sỹ Nguyên",
+    "description": "Một Kỹ Sư Phần Mềm tại <b>Bosch Global Software Technologies Vietnam</b>, đam mê công nghệ và học hỏi không ngừng. Tôi thích khám phá các công nghệ mới và xây dựng các ứng dụng không chỉ giải quyết các vấn đề thực tế mà còn phục vụ cho chính tôi.\nĐối với tôi, lập trình không chỉ là công việc — đó là cách để tạo ra, đổi mới và biến những ý tưởng thành hiện thực. \uD83D\uDE80",
+    "buttons": {
+      "download": "Tải CV",
+      "contact": "Liên Hệ Với Tôi"
+    },
+    "stats": {
+      "experience": {
+        "title": "Kinh Nghiệm",
+        "description": "Hành trình học hỏi không ngừng"
+      },
+      "projects": {
+        "title": "Tổng Số Dự Án",
+        "description": "Giải pháp web sáng tạo được tạo ra"
+      },
+      "achievements": {
+        "title": "Thành Tựu",
+        "description": "Kỹ năng chuyên môn đã được xác thực"
+      }
+    }
+  },
+  "projects": {
+    "title": "Dự Án",
+    "sub_title": "Biến những ý tưởng thành hiện thực với những dự án sáng tạo.",
+    "detail_btn": "Chi Tiết",
+    "demo_btn": "Xem Ứng Dụng",
+    "back_btn": "Quay Lại",
+    "tech_used": "Công Nghệ Được Sử Dụng",
+    "technologies": "Tổng Số Công Nghệ",
+    "features": "Tính Năng Chính",
+    "list": {
+      "chika": {
+        "title": "Chika Web App",
+        "description": "Một dự án sinh viên, khởi đầu của mọi thứ",
+        "features": {
+          "1": "Cung cấp thông tin hữu ích cho những ai quan tâm đến lĩnh vực nhà thông minh.",
+          "2": "Cung cấp giao diện và các tính năng hỗ trợ quản trị viên trong việc quản lý người dùng và sản phẩm nhà thông minh.",
+          "3": "Mang đến giao diện trực quan và tính năng cho phép người dùng điều khiển, quản lý thiết bị trong nhà từ xa theo thời gian thực.",
+          "4": "Hỗ trợ người dùng thiết lập các kịch bản tự động hóa theo lịch trình cho các thiết bị trong nhà."
+        }
+      },
+      "memoria": {
+        "title": "MEMORIA",
+        "description": "Một trang web lưu trữ tất cả tài nguyên trí nhớ của bạn",
+        "features": {
+          "1": "Ghi lại những khoảnh khắc ý nghĩa qua từng bức ảnh, biến mỗi giây phút thành một câu chuyện quý giá.",
+          "2": "Lưu giữ những phút giây hạnh phúc bên gia đình và bạn bè, để ký ức vẫn vẹn nguyên theo năm tháng.",
+          "3": "Gắn địa điểm để ghi nhớ những nơi bạn từng đặt chân đến, lưu giữ trọn vẹn từng hành trình khó quên."
+        }
+      },
+      "portfolio": {
+        "title": "My Portfolio",
+        "description": "Một nơi để giới thiệu các dự án và thành tựu của tôi",
+        "features": {
+          "1": "Trưng bày các dự án, thành tựu và dấu ấn cá nhân trong quá trình làm việc.",
+          "2": "Là nền tảng chuyên nghiệp để nhà tuyển dụng và đối tác tiềm năng tìm hiểu về kỹ năng và kinh nghiệm của tôi.",
+          "3": "Hỗ trợ kết nối dễ dàng bằng cách cho phép mọi người liên hệ trực tiếp với tôi qua website."
+        }
+      }
+    }
+  },
+  "achievements": {
+    "title": "Thành Tựu",
+    "sub_title": "Biến thử thách thành cột mốc, từng thành tựu một",
+    "list": {
+      "cic": {
+        "description": "Trong những năm đại học, tôi từng tham gia cuộc thi khởi nghiệp CIC 2020 với dự án Nhà Thông Minh, bao gồm một ứng dụng điều khiển các thiết bị trong gia đình. Dù không giành được giải thưởng nào, nhưng trải nghiệm đó vô cùng quý giá. Nó giúp tôi học được cách phát triển sản phẩm, làm việc nhóm và giải quyết vấn đề thực tế. Hành trình ấy đã thắp lên trong tôi niềm đam mê với công nghệ và đổi mới sáng tạo, đồng thời định hình tư duy xây dựng những giải pháp thiết thực và có khả năng mở rộng."
+      },
+      "certification": {
+        "description": "Tôi vinh dự nhận được \"Certificate of Appreciation\" từ Bosch cho những nỗ lực của mình trong dự án ThermalON. Dự án này ứng dụng công nghệ Micro Frontend nhằm nâng cao khả năng mở rộng và tính mô-đun của các ứng dụng web. Việc tham gia vào một dự án đổi mới như vậy không chỉ giúp tôi nâng cao kiến thức chuyên sâu về kiến trúc web hiện đại, mà còn là cơ hội quý giá để hợp tác cùng một đội ngũ tài năng, cùng nhau tạo ra những giải pháp mang lại giá trị thực tiễn."
+      },
+      "udemy": {
+        "description": "Trong quá trình tự học và nâng cao kỹ năng chuyên môn, tôi đã hoàn thành nhiều khóa học chất lượng trên Udemy và nhận được các chứng chỉ liên quan đến phát triển web, lập trình backend, cũng như các công nghệ hiện đại như React, Spring Boot, Cloud Computing và CI/CD. Những chứng chỉ này thể hiện tinh thần học hỏi không ngừng và cam kết của tôi trong việc cập nhật kiến thức mới, áp dụng vào thực tiễn để xây dựng các giải pháp phần mềm hiệu quả và tối ưu."
+      }
+    }
+  },
+  "tech_stacks": {
+    "title": "Công Nghệ",
+    "sub_title": "Thúc đẩy đổi mới với những công nghệ hiện đại nhất",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "others": "Khác"
+  },
+  "contact": {
+    "title": "Liên Hệ Với Tôi",
+    "sub_title": "Muốn biết thêm về tôi? Gửi email hoặc kết nối với tôi thông qua bất cứ trang xã hội nào",
+    "let_connect": "Hãy Kết Nối",
+    "on_linkedin": "trên LinkedIn"
+  },
+  "footer": {
+    "love_code": "Một Chàng Trai Yêu Lập Trình",
+    "last_update": "Cập nhật lần cuối vào "
+  }
+}
