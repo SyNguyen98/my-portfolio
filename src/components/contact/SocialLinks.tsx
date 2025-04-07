@@ -1,11 +1,12 @@
+import {useTranslation} from "react-i18next";
 import {Facebook, GitHub, Instagram, LinkedIn, YouTube, Link as ExternalLink} from "@mui/icons-material";
 import {FACEBOOK_URL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, YOUTUBE_URL} from "../../constants";
 
 const SOCIAL_LINKS = [
     {
         name: "LinkedIn",
-        displayName: "Let's Connect",
-        subText: "on LinkedIn",
+        displayName: "contact.let_connect",
+        subText: "contact.on_linkedin",
         icon: LinkedIn,
         url: LINKEDIN_URL,
         color: "#0A66C2",
@@ -50,6 +51,8 @@ const SOCIAL_LINKS = [
 ];
 
 const SocialLinks = () => {
+    const {t} = useTranslation();
+
     const linkedIn = SOCIAL_LINKS[0];
     const instagram = SOCIAL_LINKS[1];
     const facebook = SOCIAL_LINKS[2];
@@ -92,11 +95,11 @@ const SocialLinks = () => {
                         <div className="flex flex-col text-left">
                             <span
                                 className="text-lg font-bold pt-[0.2rem] text-gray-200 tracking-tight leading-none group-hover:text-white transition-colors duration-300">
-                                {linkedIn.displayName}
+                                {t(linkedIn.displayName)}
                             </span>
                             <span
-                                className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                                {linkedIn.subText}
+                                className="m-0.5 text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                                {t(linkedIn.subText)}
                             </span>
                         </div>
                     </div>
