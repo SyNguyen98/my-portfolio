@@ -1,5 +1,12 @@
 {
   "language": "Language",
+  "welcome": {
+    "1": "Welcome",
+    "2": "To",
+    "3": "My",
+    "4": "Portfolio",
+    "5": "Website"
+  },
   "navbar": {
     "homepage": "Home",
     "about": "About Me",

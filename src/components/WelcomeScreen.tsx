@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import {useTranslation} from "react-i18next";
 import {AnimatePresence, motion} from 'framer-motion';
 import {Code, GitHub, Language, Person, SvgIconComponent} from '@mui/icons-material';
 import AOS from 'aos';
@@ -28,13 +29,6 @@ const TypewriterEffect = ({text}: {text: string}) => {
     );
 };
 
-const BackgroundEffect = () => (
-    <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 blur-3xl animate-pulse" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/10 via-transparent to-purple-600/10 blur-2xl animate-float" />
-    </div>
-);
-
 const IconButton = ({ Icon }: { Icon: SvgIconComponent }) => (
     <div className="relative group hover:scale-110 transition-transform duration-300">
         <div className="absolute -inset-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full blur opacity-30 group-hover:opacity-75 transition duration-300" />
@@ -46,6 +40,8 @@ const IconButton = ({ Icon }: { Icon: SvgIconComponent }) => (
 
 const WelcomeScreen = ({onLoadingComplete}: {onLoadingComplete: (loadingComplete?: boolean) => void}) => {
     const [isLoading, setIsLoading] = useState(true);
+
+    const {t} = useTranslation();
 
     useEffect(() => {
         AOS.init({
@@ -97,7 +93,11 @@ const WelcomeScreen = ({onLoadingComplete}: {onLoadingComplete: (loadingComplete
                             animate={{opacity: 1}}
                             exit="exit"
                             variants={containerVariants}>
-                    <BackgroundEffect/>
+                    {/* Background Effect */}
+                    <div className="absolute inset-0 overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 blur-3xl animate-pulse" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/10 via-transparent to-purple-600/10 blur-2xl animate-float" />
+                    </div>
 
                     <div className="relative min-h-screen flex items-center justify-center px-4">
                         <div className="w-full max-w-4xl mx-auto">
@@ -117,26 +117,26 @@ const WelcomeScreen = ({onLoadingComplete}: {onLoadingComplete: (loadingComplete
                                 <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold space-y-2 sm:space-y-4">
                                     <div className="mb-2 sm:mb-4">
                                         <span data-aos="fade-right" data-aos-delay="200"
-                                              className="inline-block px-2 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-                                            Welcome
+                                              className="py-2 inline-block px-2 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                                            {t('welcome.1')}
                                         </span>{' '}
                                         <span data-aos="fade-right" data-aos-delay="400"
-                                              className="inline-block px-2 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-                                            To
+                                              className="py-2 inline-block px-2 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                                            {t('welcome.2')}
                                         </span>{' '}
                                         <span data-aos="fade-right" data-aos-delay="600"
-                                              className="inline-block px-2 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-                                            My
+                                              className="py-2 inline-block px-2 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                                            {t('welcome.3')}
                                         </span>
                                     </div>
                                     <div>
                                         <span data-aos="fade-up" data-aos-delay="800"
-                                              className="inline-block px-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                                            Portfolio
+                                              className="py-2 inline-block px-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                                            {t('welcome.4')}
                                         </span>{' '}
                                         <span data-aos="fade-up" data-aos-delay="1000"
-                                              className="inline-block px-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                                            Website
+                                              className="py-2 inline-block px-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                                            {t('welcome.5')}
                                         </span>
                                     </div>
                                 </h1>
