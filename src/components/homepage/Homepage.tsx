@@ -5,7 +5,6 @@ import {DotLottieReact} from '@lottiefiles/dotlottie-react'
 import AOS from 'aos'
 import {GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL} from "../../constants";
 import StatusBadge from "./StatusBadge.tsx";
-import MainTitle from "./MainTitle.tsx";
 import CTAButton from "./CTAButton.tsx";
 import SocialLink from "./SocialLink.tsx";
 
@@ -20,7 +19,7 @@ const SOCIAL_LINKS = [
     {icon: Instagram, link: INSTAGRAM_URL}
 ];
 
-const Introduction = () => {
+const Homepage = () => {
     const [text, setText] = useState("")
     const [isTyping, setIsTyping] = useState(true)
     const [wordIndex, setWordIndex] = useState(0)
@@ -107,7 +106,31 @@ const Introduction = () => {
                             data-aos-delay="200">
                             <div className="space-y-4 sm:space-y-6">
                                 <StatusBadge/>
-                                <MainTitle/>
+
+                                {/* Main Title */}
+                                <div className="space-y-2"
+                                     data-aos="fade-up"
+                                     data-aos-delay="600">
+                                    <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+                                        <span className="relative inline-block">
+                                            <span
+                                                className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"/>
+                                            <span
+                                                className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                                                {t('homepage.above')}
+                                            </span>
+                                        </span>
+                                        <br/>
+                                        <span className="relative inline-block mt-4">
+                                            <span
+                                                className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"/>
+                                            <span
+                                                className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+                                                {t('homepage.below')}
+                                            </span>
+                                        </span>
+                                    </h1>
+                                </div>
 
                                 {/* Typing Effect */}
                                 <div className="h-8 flex items-center" data-aos="fade-up" data-aos-delay="800">
@@ -154,7 +177,7 @@ const Introduction = () => {
                             </div>
                         </div>
 
-                        {/* Right Column - Optimized Lottie Animation */}
+                        {/* Right Column - Lottie Animation */}
                         <div
                             className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
                             onMouseEnter={() => setIsHovering(true)}
@@ -184,4 +207,4 @@ const Introduction = () => {
     );
 };
 
-export default memo(Introduction);
+export default memo(Homepage);
