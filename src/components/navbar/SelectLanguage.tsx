@@ -8,6 +8,7 @@ function SelectLanguage() {
 
     const handleChangeLanguage = (event: SelectChangeEvent) => {
         changeLanguage(event.target.value);
+        localStorage.setItem('i18nextLng', event.target.value);
     }
 
     return (

@@ -1,5 +1,12 @@
 {
   "language": "Ngôn ngữ",
+  "welcome": {
+    "1": "Chào Mừng",
+    "2": "Đến",
+    "3": "Với",
+    "4": "Trang Web",
+    "5": "Của Tôi"
+  },
   "navbar": {
     "homepage": "Trang Chủ",
     "about": "Về Tôi",
