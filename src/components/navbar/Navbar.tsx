@@ -1,12 +1,9 @@
-import {useState, useEffect, MouseEvent, useContext} from "react";
-import {Menu, Close, Language} from "@mui/icons-material";
-import {InputAdornment, MenuItem, Select, SelectChangeEvent} from "@mui/material";
+import {MouseEvent, useEffect, useState} from "react";
+import {Close, Menu} from "@mui/icons-material";
 import {useTranslation} from "react-i18next";
-import {LanguageContext} from "../providers/LanguageProvider";
-
+import SelectLanguage from "./SelectLanguage.tsx";
 
 const Navbar = () => {
-    const {language, changeLanguage} = useContext(LanguageContext);
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState("Home");
@@ -75,10 +72,6 @@ const Navbar = () => {
         setIsOpen(false);
     };
 
-    const handleChangeLanguage = (event: SelectChangeEvent) => {
-        changeLanguage(event.target.value);
-    }
-
     return (
         <nav className={`fixed w-full top-0 z-50 transition-all duration-500 ${
             isOpen
@@ -121,53 +114,15 @@ const Navbar = () => {
                                         }`}/>
                                 </a>
                             )}
-                            <Select autoWidth
-                                    value={language}
-                                    onChange={handleChangeLanguage}
-                                    startAdornment={
-                                        <InputAdornment position="start">
-                                            <Language sx={{color: "#e2d3fd"}}/>
-                                        </InputAdornment>
-                                    }
-                                    sx={{
-                                        color: "#e2d3fd",
-                                        "& .MuiOutlinedInput-notchedOutline": {
-                                            border: "none", // Removes the outline border
-                                        },
-                                        "&:hover .MuiOutlinedInput-notchedOutline": {
-                                            border: "none", // Removes the border on hover
-                                        },
-                                        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                                            border: "none", // Removes the border when focused
-                                        },
-                                        "& .MuiSelect-icon": {
-                                            color: "#e2d3fd",
-                                        }
-                                    }}
-                                    MenuProps={{
-                                        PaperProps: {
-                                            sx: {
-                                                backgroundColor: "rgb(255 255 255 / 0.1)",
-                                                color: "#a855f7",
-                                            },
-                                        },
-                                    }}>
-                                <MenuItem value="vn">
-                                    VI
-                                </MenuItem>
-                                <MenuItem value="en">
-                                    EN
-                                </MenuItem>
-                            </Select>
+                            <SelectLanguage/>
                         </div>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden">
                         <button onClick={() => setIsOpen(!isOpen)}
-                                className={`relative p-2 text-[#e2d3fd] hover:text-white transition-transform duration-300 ease-in-out transform ${
-                                    isOpen ? "rotate-90 scale-125" : "rotate-0 scale-100"
-                                }`}>
+                                className={`relative p-2 text-[#e2d3fd] hover:text-white transition-transform duration-300 ease-in-out transform 
+                                            ${isOpen ? "rotate-90 scale-125" : "rotate-0 scale-100"}`}>
                             {isOpen ? (
                                 <Close className="w-6 h-6"/>
                             ) : (
@@ -179,12 +134,12 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Overlay */}
-            <div className={`md:hidden h-3/4 fixed inset-0 bg-[#030014] transition-all duration-300 ease-in-out ${
-                isOpen
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-[-100%] pointer-events-none"
-            }`}
-                 style={{top: "64px"}}>
+            <div
+                className={`md:hidden h-fit top-16 fixed inset-0 bg-[#030014] transition-all duration-300 ease-in-out ${
+                    isOpen
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-[-100%] pointer-events-none"
+                }`}>
                 <div className="flex flex-col h-full">
                     <div className="px-4 py-6 space-y-4 flex-1 ">
                         {navItems.map((item, index) => (
@@ -204,6 +159,7 @@ const Navbar = () => {
                                 {item.label}
                             </a>
                         ))}
+                        <SelectLanguage/>
                     </div>
                 </div>
             </div>
