@@ -1,7 +1,10 @@
-import {Project} from "../../models/project.ts";
+import {useTranslation} from "react-i18next";
 import {Code, Layers} from "@mui/icons-material";
+import {Project} from "../../models/project.ts";
 
 const ProjectStats = ({project}: { project: Project }) => {
+    const {t} = useTranslation();
+
     return (
         <div className="grid grid-cols-2 gap-3 md:gap-4 p-3 md:p-4 bg-[#0a0a1a] rounded-xl overflow-hidden relative">
             <div
@@ -17,7 +20,7 @@ const ProjectStats = ({project}: { project: Project }) => {
                         {project.techStack.length}
                     </div>
                     <div className="text-[10px] md:text-xs text-gray-400">
-                        Total Technology
+                        {t('projects.technologies')}
                     </div>
                 </div>
             </div>
@@ -32,7 +35,7 @@ const ProjectStats = ({project}: { project: Project }) => {
                         {project.features.length}
                     </div>
                     <div className="text-[10px] md:text-xs text-gray-400">
-                        Key Features
+                        {t('projects.features')}
                     </div>
                 </div>
             </div>
