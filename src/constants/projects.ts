@@ -7,7 +7,7 @@ import {RiTailwindCssFill} from "react-icons/ri";
 export const PROJECTS: Project[] = [
     {
         id: "1",
-        imageUrl: 'https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/projects/chika.webp?raw=true',
+        imageUrl: 'https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/projects/chika.webp',
         title: "Chika Web App",
         description: "projects.list.chika.description",
         githubLink: "https://github.com/SyNguyen98/Chika_Web_App",
@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     },
     {
         id: "2",
-        imageUrl: 'https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/projects/memoria.webp?raw=true',
+        imageUrl: 'https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/projects/memoria.webp',
         title: "MEMORIA",
         description: "projects.list.memoria.description",
         link: "https://www.memoria.com.vn",
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     },
     {
         id: "3",
-        imageUrl: 'https://github.com/SyNguyen98/image-storage/blob/main/my-portfolio/projects/portfolio.webp?raw=true',
+        imageUrl: 'https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/projects/portfolio.webp',
         title: "My Portfolio",
         description: "projects.list.portfolio.description",
         githubLink: "https://github.com/SyNguyen98/my-portfolio",
