@@ -11,7 +11,7 @@ function Footer() {
                     © SyNguyen™ - {t("footer.love_code")}
                 </span>
                 <span className="max-w-1/3 sm:max-w-none text-xs sm:text-sm pb-4 text-gray-500 text-right dark:text-gray-400">
-                    {t("footer.last_update")} {i18n.language === "en" ? "May 5th, 2025" : "5/5/2025"}
+                    {t("footer.last_update")} {i18n.language === "en" ? "May 11th, 2025" : "11/5/2025"}
                 </span>
             </div>
         </footer>
