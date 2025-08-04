@@ -19,7 +19,7 @@
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
     "aos": "^2.3.4",
-    "framer-motion": "^12.23.10",
+    "framer-motion": "^12.23.12",
     "i18next": "^25.3.2",
     "i18next-browser-languagedetector": "^8.2.0",
     "react": "^19.1.0",
