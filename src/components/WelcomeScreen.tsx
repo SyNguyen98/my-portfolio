@@ -69,9 +69,9 @@ const WelcomeScreen = ({onLoadingComplete}: { onLoadingComplete: (loadingComplet
             filter: "blur(10px)",
             transition: {
                 duration: 0.8,
-                ease: [0.42, 0, 0.58, 1], // Example cubic-bezier easing
+                ease: "easeInOut",
                 when: "beforeChildren",
-                staggerChildren: 0.1
+                delayChildren: 0.1
             }
         }
     };
@@ -82,7 +82,7 @@ const WelcomeScreen = ({onLoadingComplete}: { onLoadingComplete: (loadingComplet
             opacity: 0,
             transition: {
                 duration: 0.4,
-                ease: [0.42, 0, 0.58, 1] // Example cubic-bezier easing
+                ease: "easeInOut",
             }
         }
     };
