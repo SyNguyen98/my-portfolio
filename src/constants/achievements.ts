@@ -28,7 +28,8 @@ export const ACHIEVEMENTS: Achievement[] = [
         imageUrl: [
             'https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/achievements/udemy-1.webp',
             'https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/achievements/udemy-2.webp',
-            'https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/achievements/udemy-3.webp'
+            'https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/achievements/udemy-3.webp',
+            'https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/achievements/udemy-4.webp'
         ],
         title: "Udemy",
         description: 'achievements.list.udemy.description'
