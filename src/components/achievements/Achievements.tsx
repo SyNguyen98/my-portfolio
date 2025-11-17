@@ -20,7 +20,7 @@ function Achievements() {
         initAOS();
 
         // Debounced resize handler
-        let resizeTimer: NodeJS.Timeout;
+        let resizeTimer: ReturnType<typeof setTimeout>;
         const handleResize = () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(initAOS, 250);
