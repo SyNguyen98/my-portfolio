@@ -1,6 +1,5 @@
-import {memo, useEffect} from "react";
+import {memo} from "react";
 import {useTranslation} from "react-i18next";
-import AOS from 'aos';
 import SectionTitle from "../SectionTitle.tsx";
 import AchievementCard from "./AchievementCard.tsx";
 import AchievementText from "./AchievementText.tsx";
@@ -8,30 +7,6 @@ import {ACHIEVEMENTS} from "../../constants/achievements.ts";
 
 function Achievements() {
     const {t} = useTranslation();
-
-    // Optimized AOS initialization
-    useEffect(() => {
-        const initAOS = () => {
-            AOS.init({
-                once: false,
-            });
-        };
-
-        initAOS();
-
-        // Debounced resize handler
-        let resizeTimer: ReturnType<typeof setTimeout>;
-        const handleResize = () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(initAOS, 250);
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            clearTimeout(resizeTimer);
-        };
-    }, []);
 
     return (
         <div className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0"

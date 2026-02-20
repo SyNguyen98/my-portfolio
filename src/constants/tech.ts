@@ -2,6 +2,7 @@ export const BACK_END = [
     {icon: "java.svg", language: "Java"},
     {icon: "spring-boot.svg", language: "Spring Boot"},
     {icon: "mysql.svg", language: "MySQL"},
+    {icon: "postgresql.svg", language: "PostgreSQL"},
     {icon: "mongodb.svg", language: "MongoDB"},
     {icon: "liquibase.webp", language: "Liquibase"},
     {icon: "redis.svg", language: "Redis"},
@@ -19,7 +20,7 @@ export const FRONT_END = [
     {icon: "reactjs.svg", language: "ReactJS"},
     {icon: "vite.svg", language: "Vite"},
     {icon: "mui.svg", language: "Material UI"},
-    {icon: "jest.svg", language: "Jest"},
+    {icon: "vitest.webp", language: "Vitest"},
     {icon: "react-query.webp", language: "React Query"},
     {icon: "redux.svg", language: "Redux"},
 ];

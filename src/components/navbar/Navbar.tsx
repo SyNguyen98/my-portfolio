@@ -1,4 +1,4 @@
-import {MouseEvent, useEffect, useState} from "react";
+import {memo, MouseEvent, useEffect, useMemo, useState} from "react";
 import {Close, Menu} from "@mui/icons-material";
 import {useTranslation} from "react-i18next";
 import SelectLanguage from "./SelectLanguage.tsx";
@@ -10,14 +10,14 @@ const Navbar = () => {
 
     const {t} = useTranslation();
 
-    const navItems = [
+    const navItems = useMemo(() => [
         {href: "#Home", label: t("navbar.homepage")},
         {href: "#About", label: t("navbar.about")},
         {href: "#Projects", label: t("navbar.projects")},
         {href: "#Achievements", label: t("navbar.achievements")},
         {href: "#TechStacks", label: t("navbar.tech_stacks")},
         {href: "#Contact", label: t("navbar.contact")},
-    ];
+    ], [t]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -49,7 +49,7 @@ const Navbar = () => {
         window.addEventListener("scroll", handleScroll);
         handleScroll();
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [navItems]);
 
     useEffect(() => {
         if (isOpen) {
@@ -83,10 +83,10 @@ const Navbar = () => {
             <div className="mx-auto px-4 sm:px-6 lg:px-[10%]">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                         <a href="#Home"
                            onClick={(e) => scrollToSection(e, "#Home")}
-                           className="text-xl font-bold bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">
+                           className="text-xl font-bold bg-linear-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">
                             Sy Nguyen
                         </a>
                     </div>
@@ -101,13 +101,13 @@ const Navbar = () => {
                                    className="group relative px-1 py-2 text-sm font-medium">
                                     <span className={`relative z-10 transition-colors duration-300 ${
                                         activeSection === item.href.substring(1)
-                                            ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
+                                            ? "bg-linear-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
                                             : "text-[#e2d3fd] group-hover:text-white"
                                     }`}>
                                         {item.label}
                                     </span>
                                     <span
-                                        className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] transform origin-left transition-transform duration-300 ${
+                                        className={`absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-[#6366f1] to-[#a855f7] transform origin-left transition-transform duration-300 ${
                                             activeSection === item.href.substring(1)
                                                 ? "scale-x-100"
                                                 : "scale-x-0 group-hover:scale-x-100"
@@ -138,7 +138,7 @@ const Navbar = () => {
                 className={`md:hidden h-fit top-16 fixed inset-0 bg-[#030014] transition-all duration-300 ease-in-out ${
                     isOpen
                         ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-[-100%] pointer-events-none"
+                        : "opacity-0 -translate-y-full pointer-events-none"
                 }`}>
                 <div className="flex flex-col h-full">
                     <div className="px-4 py-6 space-y-4 flex-1 ">
@@ -148,7 +148,7 @@ const Navbar = () => {
                                onClick={(e) => scrollToSection(e, item.href)}
                                className={`block px-4 py-3 text-lg font-medium transition-all duration-300 ease ${
                                    activeSection === item.href.substring(1)
-                                       ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
+                                       ? "bg-linear-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
                                        : "text-[#e2d3fd] hover:text-white"
                                }`}
                                style={{
@@ -167,4 +167,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default memo(Navbar);

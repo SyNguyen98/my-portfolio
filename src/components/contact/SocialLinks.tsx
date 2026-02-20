@@ -60,7 +60,7 @@ const SocialLinks = () => {
     const youtube = SOCIAL_LINKS[4];
 
     return (
-        <div className="w-full bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 py-8 backdrop-blur-xl">
+        <div className="w-full bg-linear-to-br from-white/10 to-white/5 rounded-2xl p-6 py-8 backdrop-blur-xl">
             <a href="mailto:nguyen.nguyenhongsy@outlook.com.vn">
                 <h3 className="text-base sm:text-xl font-semibold text-white mb-6 flex items-center gap-2">
                     <span className="inline-block w-8 h-1 bg-indigo-500 rounded-full"></span>
@@ -76,7 +76,7 @@ const SocialLinks = () => {
                    className="group relative flex items-center justify-between p-4 rounded-lg bg-white/5 border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500">
                     {/* Hover Gradient Background */}
                     <div
-                        className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r ${linkedIn.gradient}`}/>
+                        className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-linear-to-r ${linkedIn.gradient}`}/>
 
                     {/* Content Container */}
                     <div className="relative flex items-center gap-4">
@@ -112,7 +112,7 @@ const SocialLinks = () => {
                     <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none overflow-hidden">
                         <div
-                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"/>
+                            className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"/>
                     </div>
                 </a>
 
@@ -125,7 +125,7 @@ const SocialLinks = () => {
                            target="_blank"
                            rel="noopener noreferrer"
                            className="group relative flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500">
-                            <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r ${link.gradient}`}/>
+                            <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-linear-to-r ${link.gradient}`}/>
 
                             <div className="relative flex items-center justify-center">
                                 <div
@@ -155,7 +155,7 @@ const SocialLinks = () => {
                             <div
                                 className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none overflow-hidden">
                                 <div
-                                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"/>
+                                    className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"/>
                             </div>
                         </a>
                     ))}
@@ -170,7 +170,7 @@ const SocialLinks = () => {
                            rel="noopener noreferrer"
                            className="group relative flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500">
                             <div
-                                className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r ${link.gradient}`}/>
+                                className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-linear-to-r ${link.gradient}`}/>
 
                             <div className="relative flex items-center justify-center">
                                 <div
@@ -200,7 +200,7 @@ const SocialLinks = () => {
                             <div
                                 className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none overflow-hidden">
                                 <div
-                                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"/>
+                                    className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"/>
                             </div>
                         </a>
                     ))}

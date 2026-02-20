@@ -1,7 +1,6 @@
 import {useTheme} from "@mui/material/styles";
-import {SyntheticEvent, useEffect, useState} from "react";
+import {SyntheticEvent, useState} from "react";
 import {useTranslation} from "react-i18next";
-import AOS from "aos";
 import {AppBar, Box, Tab, Tabs} from "@mui/material";
 import {Api, Cloud, SettingsEthernet} from "@mui/icons-material";
 import SectionTitle from "../SectionTitle.tsx";
@@ -15,19 +14,12 @@ export default function TechStacks() {
 
     const {t} = useTranslation();
 
-    useEffect(() => {
-        // Initialize AOS once
-        AOS.init({
-            once: false, // This will make animations occur only once
-        });
-    }, []);
-
     const handleChange = (_event: SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
 
     return (
-        <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="TechStacks">
+        <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-12 bg-[#030014] overflow-hidden" id="TechStacks">
             <SectionTitle title={t('tech_stacks.title')} subTitle={t('tech_stacks.sub_title')}/>
 
             <Box sx={{width: "100%"}}>

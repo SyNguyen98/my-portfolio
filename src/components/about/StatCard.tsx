@@ -17,7 +17,7 @@ const StatCard = memo(({icon: Icon, color, value, label, description, animation}
         <div
             className="relative z-10 bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-white/10 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
             <div
-                className={`absolute -z-10 inset-0 bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}/>
+                className={`absolute -z-10 inset-0 bg-linear-to-br ${color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}/>
 
             <div className="flex items-center justify-between mb-4">
                 <div

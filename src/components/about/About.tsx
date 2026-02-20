@@ -1,6 +1,5 @@
-import {memo, useEffect, useMemo} from "react"
+import {memo, useMemo} from "react"
 import {Code, ContactPage, Description, EmojiEvents, Public} from '@mui/icons-material';
-import AOS from 'aos'
 import {PROJECTS} from "../../constants/projects.ts";
 import {ACHIEVEMENTS} from "../../constants/achievements.ts";
 import {Trans, useTranslation} from "react-i18next";
@@ -13,13 +12,13 @@ const ProfileImage = memo(() => (
              data-aos="fade-up"
              data-aos-duration="1000">
             {/* Optimized gradient backgrounds with reduced complexity for mobile */}
-            <div className="absolute -inset-6 opacity-[25%] z-0 hidden sm:block">
+            <div className="absolute -inset-6 opacity-25 z-0 hidden sm:block">
                 <div
-                    className="absolute inset-0 bg-gradient-to-r from-violet-600 via-indigo-500 to-purple-600 rounded-full blur-2xl animate-spin-slower"/>
+                    className="absolute inset-0 bg-linear-to-r from-violet-600 via-indigo-500 to-purple-600 rounded-full blur-2xl animate-spin-slower"/>
                 <div
-                    className="absolute inset-0 bg-gradient-to-l from-fuchsia-500 via-rose-500 to-pink-600 rounded-full blur-2xl animate-pulse-slow opacity-50"/>
+                    className="absolute inset-0 bg-linear-to-l from-fuchsia-500 via-rose-500 to-pink-600 rounded-full blur-2xl animate-pulse-slow opacity-50"/>
                 <div
-                    className="absolute inset-0 bg-gradient-to-t from-blue-600 via-cyan-500 to-teal-400 rounded-full blur-2xl animate-float opacity-50"/>
+                    className="absolute inset-0 bg-linear-to-t from-blue-600 via-cyan-500 to-teal-400 rounded-full blur-2xl animate-float opacity-50"/>
             </div>
 
             <div className="relative">
@@ -30,9 +29,9 @@ const ProfileImage = memo(() => (
 
                     {/* Optimized overlay effects - disabled on mobile */}
                     <div
-                        className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0 hidden sm:block"/>
+                        className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0 hidden sm:block"/>
                     <div
-                        className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block"/>
+                        className="absolute inset-0 bg-linear-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block"/>
 
                     <img src='https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/Avatar.webp?raw=true'
                          alt="Profile"
@@ -43,9 +42,9 @@ const ProfileImage = memo(() => (
                     <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 z-20 hidden sm:block">
                         <div
-                            className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"/>
+                            className="absolute inset-0 bg-linear-to-tr from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"/>
                         <div
-                            className="absolute inset-0 bg-gradient-to-bl from-transparent via-white/10 to-transparent transform translate-y-full group-hover:-translate-y-full transition-transform duration-1000 delay-100"/>
+                            className="absolute inset-0 bg-linear-to-bl from-transparent via-white/10 to-transparent transform translate-y-full group-hover:-translate-y-full transition-transform duration-1000 delay-100"/>
                         <div
                             className="absolute inset-0 rounded-full border-8 border-white/10 scale-0 group-hover:scale-100 transition-transform duration-700 animate-pulse-slow"/>
                     </div>
@@ -96,30 +95,6 @@ function About() {
         }
     ];
 
-    // Optimized AOS initialization
-    useEffect(() => {
-        const initAOS = () => {
-            AOS.init({
-                once: false,
-            });
-        };
-
-        initAOS();
-
-        // Debounced resize handler
-        let resizeTimer: ReturnType<typeof setTimeout>;
-        const handleResize = () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(initAOS, 250);
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            clearTimeout(resizeTimer);
-        };
-    }, []);
-
     return (
         <div className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0"
              id="About">
@@ -133,7 +108,7 @@ function About() {
                             data-aos="fade-right"
                             data-aos-duration="1000">
                             <span
-                                className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
+                                className="text-transparent bg-clip-text bg-linear-to-r from-[#6366f1] to-[#a855f7]">
                                 {t('about_me.hello')}
                             </span>
                             <span className="block mt-4 text-gray-200"
@@ -154,7 +129,7 @@ function About() {
                             <a href="https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/files/cv.pdf?raw=true" download="cv.pdf" className="w-full lg:w-auto">
                                 <button data-aos="fade-up"
                                         data-aos-duration="800"
-                                        className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl animate-bounce-slow cursor-pointer">
+                                        className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-linear-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl animate-bounce-slow cursor-pointer">
                                     <Description className="w-4 h-4 sm:w-5 sm:h-5"/>
                                     {t('about_me.buttons.download')}
                                 </button>
