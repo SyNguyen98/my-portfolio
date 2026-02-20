@@ -16,7 +16,7 @@ export default defineConfig({
         globals: true,
         environment: "jsdom",
         // this points to the setup file created earlier
-        setupFiles: "./src/setupTests.js",
+        setupFiles: "./src/setupTests.ts",
         // you might want to disable the `css: true` line, since we don't have
         // tests that rely on CSS -- and parsing CSS is slow.
         // I'm leaving it in here because often people want to parse CSS in tests.
