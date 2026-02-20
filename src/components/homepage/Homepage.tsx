@@ -1,8 +1,6 @@
-import {memo, useCallback, useEffect, useState} from "react"
+import {memo, useEffect, useState} from "react"
 import {useTranslation} from "react-i18next";
 import {GitHub, Instagram, Link as ExternalLink, LinkedIn, Mail} from '@mui/icons-material';
-import {DotLottieReact} from '@lottiefiles/dotlottie-react'
-import AOS from 'aos'
 import {GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL} from "../../constants";
 import StatusBadge from "./StatusBadge.tsx";
 import CTAButton from "./CTAButton.tsx";
@@ -24,78 +22,36 @@ const Homepage = () => {
     const [isTyping, setIsTyping] = useState(true)
     const [wordIndex, setWordIndex] = useState(0)
     const [charIndex, setCharIndex] = useState(0)
-    const [isLoaded, setIsLoaded] = useState(false)
     const [isHovering, setIsHovering] = useState(false)
 
     const {t} = useTranslation();
 
-    const WORDS = [t('homepage.from'), t('homepage.to')];
-
-    // Optimize AOS initialization
     useEffect(() => {
-        const initAOS = () => {
-            AOS.init({
-                once: true,
-                offset: 10,
-            });
-        };
-
-        initAOS();
-        window.addEventListener('resize', initAOS);
-        return () => window.removeEventListener('resize', initAOS);
-    }, []);
-
-    useEffect(() => {
-        setIsLoaded(true);
-        return () => setIsLoaded(false);
-    }, []);
-
-    // Optimize typing effect
-    const handleTyping = useCallback(() => {
-        if (isTyping) {
-            if (charIndex < WORDS[wordIndex].length) {
-                setText(prev => prev + WORDS[wordIndex][charIndex]);
-                setCharIndex(charIndex + 1);
-            } else {
-                setTimeout(() => setIsTyping(false), PAUSE_DURATION);
-            }
-        } else if (charIndex > 0) {
-            setText(prev => prev.slice(0, -1));
-            setCharIndex(charIndex - 1);
-        } else {
-            setWordIndex((wordIndex + 1) % WORDS.length);
-            setIsTyping(true);
-        }
-    }, [charIndex, isTyping, wordIndex]);
-
-    useEffect(() => {
-        const timeout = setTimeout(
-            handleTyping,
+        const WORDS = [t('homepage.from'), t('homepage.to')];
+        const timeout = setTimeout(() => {
+                if (isTyping) {
+                    if (charIndex < WORDS[wordIndex].length) {
+                        setText(prev => prev + WORDS[wordIndex][charIndex]);
+                        setCharIndex(charIndex + 1);
+                    } else {
+                        setTimeout(() => setIsTyping(false), PAUSE_DURATION);
+                    }
+                } else if (charIndex > 0) {
+                    setText(prev => prev.slice(0, -1));
+                    setCharIndex(charIndex - 1);
+                } else {
+                    setWordIndex((wordIndex + 1) % WORDS.length);
+                    setIsTyping(true);
+                }
+            },
             isTyping ? TYPING_SPEED : ERASING_SPEED
         );
         return () => clearTimeout(timeout);
-    }, [handleTyping]);
-
-    // Lottie configuration
-    const lottieOptions = {
-        src: "https://lottie.host/58753882-bb6a-49f5-a2c0-950eda1e135a/NLbpVqGegK.lottie",
-        loop: true,
-        autoplay: true,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-            progressiveLoad: true,
-        },
-        style: {width: "100%", height: "100%"},
-        className: `w-full h-full transition-all duration-500 ${
-            isHovering
-                ? "scale-[180%] sm:scale-[160%] md:scale-[150%] lg:scale-[145%] rotate-2"
-                : "scale-[175%] sm:scale-[155%] md:scale-[145%] lg:scale-[140%]"
-        }`
-    };
+    }, [charIndex, isTyping, t, wordIndex]);
 
     return (
         <div className="min-h-screen sm:mt-0 lg:mt-10 bg-[#030014] overflow-hidden" id="Home">
-            <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
+            <div className="relative z-10 transition-all duration-1000">
                 <div
                     className="mx-auto px-6 sm:px-[10%] flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20">
                     {/* Left Column */}
@@ -113,18 +69,18 @@ const Homepage = () => {
                                 <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
                                         <span className="relative inline-block">
                                             <span
-                                                className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"/>
+                                                className="absolute -inset-2 bg-linear-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"/>
                                             <span
-                                                className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                                                className="relative bg-linear-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
                                                 {t('homepage.above')}
                                             </span>
                                         </span>
                                     <br/>
                                     <span className="relative inline-block mt-4">
                                             <span
-                                                className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"/>
+                                                className="absolute -inset-2 bg-linear-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"/>
                                             <span
-                                                className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+                                                className="relative bg-linear-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
                                                 {t('homepage.below')}
                                             </span>
                                         </span>
@@ -134,11 +90,11 @@ const Homepage = () => {
                             {/* Typing Effect */}
                             <div className="h-8 flex items-center" data-aos="fade-up" data-aos-delay="800">
                                     <span
-                                        className="text-xl md:text-2xl bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent font-light">
+                                        className="text-xl md:text-2xl bg-linear-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent font-light">
                                         {text}
                                     </span>
                                 <span
-                                    className="w-[3px] h-6 bg-gradient-to-t from-[#6366f1] to-[#a855f7] ml-1 animate-blink"/>
+                                    className="w-[3px] h-6 bg-linear-to-t from-[#6366f1] to-[#a855f7] ml-1 animate-blink"/>
                             </div>
 
                             {/* Description */}
@@ -184,17 +140,25 @@ const Homepage = () => {
                         data-aos="fade-left"
                         data-aos-delay="600">
                         <div className="relative w-full opacity-90">
-                            <div className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out
+                            <div className={`absolute inset-0 bg-linear-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out
                                                 ${isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"}`}/>
                             <div
                                 className={`relative z-10 w-full opacity-90 transform transition-transform duration-500 ${isHovering ? "scale-105" : "scale-100"}`}>
-                                <DotLottieReact {...lottieOptions} />
+                                <img
+                                    src="https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/Developer-Animation.gif"
+                                    alt="Developer Animation"
+                                    className={`w-full h-full object-contain transition-all duration-500 ${
+                                        isHovering
+                                            ? "scale-[95%] sm:scale-[90%] md:scale-[90%] lg:scale-[90%] rotate-2"
+                                            : "scale-[90%] sm:scale-[80%] md:scale-[80%] lg:scale-[80%]"
+                                    }`}
+                                />
                             </div>
 
                             <div
                                 className={`absolute inset-0 pointer-events-none transition-all duration-700 ${isHovering ? "opacity-50" : "opacity-20"}`}>
                                 <div
-                                    className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-3xl animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-700 
+                                    className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-linear-to-br from-indigo-500/10 to-purple-500/10 blur-3xl animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-700 
                                         ${isHovering ? "scale-110" : "scale-100"}`}/>
                             </div>
                         </div>

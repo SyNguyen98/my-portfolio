@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import {memo, useContext} from 'react';
 import {InputAdornment, MenuItem, Select, SelectChangeEvent} from "@mui/material";
 import {Language} from "@mui/icons-material";
 import {LanguageContext} from "../../providers/LanguageProvider.tsx";
@@ -53,4 +53,4 @@ function SelectLanguage() {
     );
 }
 
-export default SelectLanguage;
+export default memo(SelectLanguage);

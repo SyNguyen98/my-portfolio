@@ -1,14 +1,15 @@
-import {useEffect, useState} from 'react';
+import {memo, useEffect, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import {AnimatePresence, motion} from 'framer-motion';
 import {Variants} from "motion-dom";
 import {Code, GitHub, Language, Person, SvgIconComponent} from '@mui/icons-material';
 import AOS from 'aos';
 
-const TypewriterEffect = ({text}: { text: string }) => {
+const TextWriter = () => {
     const [displayText, setDisplayText] = useState('');
 
     useEffect(() => {
+        const text = "synguyen.info.vn";
         let index = 0;
         const timer = setInterval(() => {
             if (index <= text.length) {
@@ -17,10 +18,10 @@ const TypewriterEffect = ({text}: { text: string }) => {
             } else {
                 clearInterval(timer);
             }
-        }, 100);
+        }, 200);
 
         return () => clearInterval(timer);
-    }, [text]);
+    }, []);
 
     return (
         <span className="inline-block">
@@ -33,7 +34,7 @@ const TypewriterEffect = ({text}: { text: string }) => {
 const IconButton = ({Icon}: { Icon: SvgIconComponent }) => (
     <div className="relative group hover:scale-110 transition-transform duration-300">
         <div
-            className="absolute -inset-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full blur opacity-30 group-hover:opacity-75 transition duration-300"/>
+            className="absolute -inset-2 bg-linear-to-r from-indigo-600 to-purple-600 rounded-full blur opacity-30 group-hover:opacity-75 transition duration-300"/>
         <div className="relative p-2 sm:p-3 bg-black/50 backdrop-blur-sm rounded-full border border-white/10">
             <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white"/>
         </div>
@@ -98,9 +99,9 @@ const WelcomeScreen = ({onLoadingComplete}: { onLoadingComplete: (loadingComplet
                     {/* Background Effect */}
                     <div className="absolute inset-0 overflow-hidden">
                         <div
-                            className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 blur-3xl animate-pulse"/>
+                            className="absolute inset-0 bg-linear-to-r from-indigo-600/20 to-purple-600/20 blur-3xl animate-pulse"/>
                         <div
-                            className="absolute inset-0 bg-gradient-to-tr from-indigo-600/10 via-transparent to-purple-600/10 blur-2xl animate-float"/>
+                            className="absolute inset-0 bg-linear-to-tr from-indigo-600/10 via-transparent to-purple-600/10 blur-2xl animate-float"/>
                     </div>
 
                     <div className="relative min-h-screen flex items-center justify-center px-4">
@@ -121,25 +122,25 @@ const WelcomeScreen = ({onLoadingComplete}: { onLoadingComplete: (loadingComplet
                                 <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold space-y-2 sm:space-y-4">
                                     <div className="mb-2 sm:mb-4">
                                         <span data-aos="fade-right" data-aos-delay="200"
-                                              className="py-2 inline-block px-2 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                                              className="py-2 inline-block px-2 bg-linear-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
                                             {t('welcome.1')}
                                         </span>{' '}
                                         <span data-aos="fade-right" data-aos-delay="400"
-                                              className="py-2 inline-block px-2 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                                              className="py-2 inline-block px-2 bg-linear-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
                                             {t('welcome.2')}
                                         </span>{' '}
                                         <span data-aos="fade-right" data-aos-delay="600"
-                                              className="py-2 inline-block px-2 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                                              className="py-2 inline-block px-2 bg-linear-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
                                             {t('welcome.3')}
                                         </span>
                                     </div>
                                     <div>
                                         <span data-aos="fade-up" data-aos-delay="800"
-                                              className="py-2 inline-block px-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                                              className="py-2 inline-block px-2 bg-linear-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                                             {t('welcome.4')}
                                         </span>{' '}
                                         <span data-aos="fade-up" data-aos-delay="1000"
-                                              className="py-2 inline-block px-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                                              className="py-2 inline-block px-2 bg-linear-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                                             {t('welcome.5')}
                                         </span>
                                     </div>
@@ -156,12 +157,12 @@ const WelcomeScreen = ({onLoadingComplete}: { onLoadingComplete: (loadingComplet
                                    target="_blank"
                                    rel="noopener noreferrer">
                                     <div
-                                        className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-full blur-md group-hover:blur-lg transition-all duration-300"/>
+                                        className="absolute inset-0 bg-linear-to-r from-indigo-600/20 to-purple-600/20 rounded-full blur-md group-hover:blur-lg transition-all duration-300"/>
                                     <div className="relative flex items-center gap-2 text-lg sm:text-xl md:text-2xl">
                                         <Language className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600"/>
                                         <span
-                                            className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                                            <TypewriterEffect text="synguyen.info.vn"/>
+                                            className="bg-linear-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                                            <TextWriter />
                                         </span>
                                     </div>
                                 </a>
@@ -174,4 +175,4 @@ const WelcomeScreen = ({onLoadingComplete}: { onLoadingComplete: (loadingComplet
     );
 };
 
-export default WelcomeScreen;
+export default memo(WelcomeScreen);
