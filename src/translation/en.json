@@ -21,7 +21,11 @@
     "below": "Engineer",
     "from": "From A Physics Student",
     "to": "To A Software Engineer",
-    "slogan": "Passionate about technology, crafting websites that inspire and empower others."
+    "slogan": "Passionate about technology, crafting websites that inspire and empower others.",
+    "buttons": {
+      "download": "Download CV",
+      "project": "View Project"
+    }
   },
   "about_me": {
     "title": "About Me",
@@ -29,10 +33,6 @@
     "hello": "Hello, I'm",
     "name": "Nguyen Hong Sy Nguyen",
     "description": "A Software Engineer at <b>Bosch Global Software Technologies Vietnam</b>, passionate about technology and continuous learning. I love exploring new tech stacks and building applications that not only solve real-world problems but also serve my own.\nFor me, coding is more than just work — it’s a way to create, innovate and bring ideas to life. \uD83D\uDE80",
-    "buttons": {
-      "download": "Download CV",
-      "contact": "Contact Me"
-    },
     "stats": {
       "experience": {
         "title": "Experience",
