@@ -6,7 +6,7 @@ import {RiTailwindCssFill} from "react-icons/ri";
 
 export const PROJECTS: Project[] = [
     {
-        id: "1",
+        id: "chika",
         imageUrl: 'https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/projects/chika.webp',
         title: "Chika Web App",
         description: "projects.list.chika.description",
@@ -23,11 +23,12 @@ export const PROJECTS: Project[] = [
         ]
     },
     {
-        id: "2",
+        id: "memoria",
         imageUrl: 'https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/projects/memoria.webp',
         title: "MEMORIA",
         description: "projects.list.memoria.description",
         link: "https://www.memoria.com.vn",
+        githubLink: "https://github.com/SyNguyen98/memoria-fe",
         techStack: [
             {icon: FaReact, name: "React"},
             {icon: SiSpringboot, name: "Spring Boot"},
@@ -40,7 +41,7 @@ export const PROJECTS: Project[] = [
         ]
     },
     {
-        id: "3",
+        id: "portfolio",
         imageUrl: 'https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/projects/portfolio.webp',
         title: "My Portfolio",
         description: "projects.list.portfolio.description",

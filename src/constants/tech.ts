@@ -19,8 +19,8 @@ export const FRONT_END = [
     {icon: "typescript.svg", language: "TypeScript"},
     {icon: "reactjs.svg", language: "ReactJS"},
     {icon: "vite.svg", language: "Vite"},
-    {icon: "mui.svg", language: "Material UI"},
     {icon: "vitest.webp", language: "Vitest"},
+    {icon: "mui.svg", language: "Material UI"},
     {icon: "react-query.webp", language: "React Query"},
     {icon: "redux.svg", language: "Redux"},
 ];

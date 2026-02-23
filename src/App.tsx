@@ -66,7 +66,7 @@ function App() {
                         )}
                     </>
                 }/>
-                <Route path="/projects/:id" element={
+                <Route path="/projects" element={
                     <>
                         <ProjectDetail/>
                         <Footer/>
