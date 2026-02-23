@@ -1,10 +1,11 @@
 import {memo, useMemo} from "react"
-import {Code, ContactPage, Description, EmojiEvents, Public} from '@mui/icons-material';
 import {PROJECTS} from "../../constants/projects.ts";
 import {ACHIEVEMENTS} from "../../constants/achievements.ts";
 import {Trans, useTranslation} from "react-i18next";
 import SectionTitle from "../SectionTitle.tsx";
 import StatCard from "./StatCard.tsx";
+import {FaCalendarAlt, FaCode} from "react-icons/fa";
+import {GrAchievement} from "react-icons/gr";
 
 const ProfileImage = memo(() => (
     <div className="flex justify-end items-center sm:p-12 sm:py-0 sm:pb-0 p-0 py-2 pb-2">
@@ -26,12 +27,6 @@ const ProfileImage = memo(() => (
                     className="w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105">
                     <div
                         className="absolute inset-0 border-4 border-white/20 rounded-full z-20 transition-all duration-700 group-hover:border-white/40 group-hover:scale-105"/>
-
-                    {/* Optimized overlay effects - disabled on mobile */}
-                    <div
-                        className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0 hidden sm:block"/>
-                    <div
-                        className="absolute inset-0 bg-linear-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block"/>
 
                     <img src='https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/Avatar.webp?raw=true'
                          alt="Profile"
@@ -70,24 +65,21 @@ function About() {
 
     const statsData = [
         {
-            icon: Public,
-            color: "from-[#6366f1] to-[#a855f7]",
+            icon: FaCalendarAlt,
             value: yearExperience,
             label: t('about_me.stats.experience.title'),
             description: t('about_me.stats.experience.description'),
             animation: "fade-left",
         },
         {
-            icon: Code,
-            color: "from-[#6366f1] to-[#a855f7]",
+            icon: FaCode,
             value: PROJECTS.length,
             label: t('about_me.stats.projects.title'),
             description: t('about_me.stats.projects.description'),
             animation: "fade-right",
         },
         {
-            icon: EmojiEvents,
-            color: "from-[#a855f7] to-[#6366f1]",
+            icon: GrAchievement,
             value: ACHIEVEMENTS.length,
             label: t('about_me.stats.achievements.title'),
             description: t('about_me.stats.achievements.description'),
@@ -108,41 +100,21 @@ function About() {
                             data-aos="fade-right"
                             data-aos-duration="1000">
                             <span
-                                className="text-transparent bg-clip-text bg-linear-to-r from-[#6366f1] to-[#a855f7]">
+                                className="text-transparent bg-clip-text bg-linear-to-r from-cobalt-blue to-deep-purple">
                                 {t('about_me.hello')}
                             </span>
-                            <span className="block mt-4 text-gray-200"
+                            <span className="block mt-4 text-white"
                                   data-aos="fade-right"
                                   data-aos-duration="1300">
                                 {t('about_me.name')}
                             </span>
                         </h2>
 
-                        <p className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0"
+                        <p className="text-base text-ghost-white sm:text-lg lg:text-xl text-g leading-relaxed text-justify pb-4 sm:pb-0"
                            data-aos="fade-right"
                            data-aos-duration="1500">
                             <Trans i18nKey="about_me.description" components={{ b: <strong /> }} />
                         </p>
-
-                        <div
-                            className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-                            <a href="https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/files/cv.pdf?raw=true" download="cv.pdf" className="w-full lg:w-auto">
-                                <button data-aos="fade-up"
-                                        data-aos-duration="800"
-                                        className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-linear-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl animate-bounce-slow cursor-pointer">
-                                    <Description className="w-4 h-4 sm:w-5 sm:h-5"/>
-                                    {t('about_me.buttons.download')}
-                                </button>
-                            </a>
-                            <a href="#Contact" className="w-full lg:w-auto">
-                                <button data-aos="fade-up"
-                                        data-aos-duration="1000"
-                                        className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10 animate-bounce-slow delay-200 cursor-pointer">
-                                    <ContactPage className="w-4 h-4 sm:w-5 sm:h-5"/>
-                                    {t('about_me.buttons.contact')}
-                                </button>
-                            </a>
-                        </div>
                     </div>
 
                     <ProfileImage/>

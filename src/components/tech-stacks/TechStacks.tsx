@@ -2,11 +2,11 @@ import {useTheme} from "@mui/material/styles";
 import {SyntheticEvent, useState} from "react";
 import {useTranslation} from "react-i18next";
 import {AppBar, Box, Tab, Tabs} from "@mui/material";
-import {Api, Cloud, SettingsEthernet} from "@mui/icons-material";
 import SectionTitle from "../SectionTitle.tsx";
 import TechIcon from "./TechIcon.tsx";
 import TabPanel from "./TabPanel.tsx";
 import {BACK_END, FRONT_END, OTHERS} from "../../constants/tech.ts";
+import {MdApi, MdCloud, MdWeb} from "react-icons/md";
 
 export default function TechStacks() {
     const theme = useTheme();
@@ -19,7 +19,7 @@ export default function TechStacks() {
     };
 
     return (
-        <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-12 bg-[#030014] overflow-hidden" id="TechStacks">
+        <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-12 bg-deep-space overflow-hidden" id="TechStacks">
             <SectionTitle title={t('tech_stacks.title')} subTitle={t('tech_stacks.sub_title')}/>
 
             <Box sx={{width: "100%"}}>
@@ -28,7 +28,7 @@ export default function TechStacks() {
                         elevation={0}
                         sx={{
                             bgcolor: "transparent",
-                            border: "1px solid rgba(255, 255, 255, 0.1)",
+                            border: "1px solid #1E293B",
                             borderRadius: "20px",
                             position: "relative",
                             overflow: "hidden",
@@ -39,7 +39,7 @@ export default function TechStacks() {
                                 left: 0,
                                 right: 0,
                                 bottom: 0,
-                                background: "linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(59, 130, 246, 0.03) 100%)",
+                                background: "#161B22",
                                 backdropFilter: "blur(10px)",
                                 zIndex: 0,
                             },
@@ -57,7 +57,7 @@ export default function TechStacks() {
                               "& .MuiTab-root": {
                                   fontSize: {xs: "0.9rem", md: "1rem"},
                                   fontWeight: "600",
-                                  color: "#94a3b8",
+                                  color: "white",
                                   textTransform: "none",
                                   transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                                   padding: "20px 0",
@@ -65,14 +65,15 @@ export default function TechStacks() {
                                   margin: "8px",
                                   borderRadius: "12px",
                                   "&:hover": {
-                                      color: "#ffffff",
-                                      backgroundColor: "rgba(139, 92, 246, 0.1)",
+                                      color: "#BDBDBD",
+                                      background: "#1E293B",
+                                      backdropFilter: "blur(10px)",
                                       transform: "translateY(-2px)"
                                   },
                                   "&.Mui-selected": {
-                                      color: "#fff",
-                                      background: "linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))",
-                                      boxShadow: "0 4px 15px -3px rgba(139, 92, 246, 0.2)"
+                                      color: "#00F5FF",
+                                      background: "#1E293B",
+                                      boxShadow: "0 4px 15px -3px #1E293B"
                                   },
                               },
                               "& .MuiTabs-indicator": {
@@ -82,13 +83,13 @@ export default function TechStacks() {
                                   gap: "8px",
                               },
                           }}>
-                        <Tab icon={<Api className="mb-2 w-5 h-5 transition-all duration-300"/>}
+                        <Tab icon={<MdApi className="mb-2 w-6 h-6 transition-all duration-300"/>}
                              label={t('tech_stacks.backend')}
                              id='full-width-tab-0' aria-controls='full-width-tabpanel-0'/>
-                        <Tab icon={<SettingsEthernet className="mb-2 w-5 h-5 transition-all duration-300"/>}
+                        <Tab icon={<MdWeb className="mb-2 w-5 h-5 transition-all duration-300"/>}
                              label={t('tech_stacks.frontend')}
                              id='full-width-tab-1' aria-controls='full-width-tabpanel-1'/>
-                        <Tab icon={<Cloud className="mb-2 w-5 h-5 transition-all duration-300"/>}
+                        <Tab icon={<MdCloud className="mb-2 w-5 h-5 transition-all duration-300"/>}
                              label={t('tech_stacks.others')}
                              id='full-width-tab-2' aria-controls='full-width-tabpanel-2'/>
                     </Tabs>

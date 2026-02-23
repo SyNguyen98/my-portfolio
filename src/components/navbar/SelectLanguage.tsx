@@ -1,7 +1,7 @@
 import {memo, useContext} from 'react';
 import {InputAdornment, MenuItem, Select, SelectChangeEvent} from "@mui/material";
-import {Language} from "@mui/icons-material";
 import {LanguageContext} from "../../providers/LanguageProvider.tsx";
+import {MdLanguage} from "react-icons/md";
 
 function SelectLanguage() {
     const {language, changeLanguage} = useContext(LanguageContext);
@@ -17,11 +17,11 @@ function SelectLanguage() {
                 onChange={handleChangeLanguage}
                 startAdornment={
                     <InputAdornment position="start">
-                        <Language sx={{color: "#e2d3fd"}}/>
+                        <MdLanguage className="text-white w-5 h-5"/>
                     </InputAdornment>
                 }
                 sx={{
-                    color: "#e2d3fd",
+                    color: "white",
                     "& .MuiOutlinedInput-notchedOutline": {
                         border: "none", // Removes the outline border
                     },
@@ -32,14 +32,14 @@ function SelectLanguage() {
                         border: "none", // Removes the border when focused
                     },
                     "& .MuiSelect-icon": {
-                        color: "#e2d3fd",
+                        color: "white",
                     }
                 }}
                 MenuProps={{
                     PaperProps: {
                         sx: {
                             backgroundColor: "rgb(255 255 255 / 0.1)",
-                            color: "#a855f7",
+                            color: "#E0E0E0",
                         },
                     },
                 }}>

@@ -3,6 +3,23 @@
 @import "swiper/css";
 @import "./assets/fonts/font.css";
 
+@theme {
+    /* Dark Theme */
+    --color-deep-space: #0B0E14;
+    --color-layered-slate: #161B22;
+    --color-steel-blue: #1E293B;
+    --color-ghost-white: #BDBDBD;
+    --color-neon-cyan: #00F5FF;
+    --color-deep-purple: #7000FF;
+    /* Light Theme */
+    --color-zinc-white: #F8FAFC;
+    --color-pale-gray: #E2E8F0;
+    --color-dark-navy: #0F172A;
+    --color-slate-navy: #334155;
+    --color-cobalt-blue: #2563EB;
+    --color-emerald-green: #10B981;
+}
+
 * {
     box-sizing: border-box;
     font-family: "GenshinFont", sans-serif;
@@ -14,7 +31,7 @@
 html,
 body {
     overflow-x: hidden;
-    background: #030014;
+    background: #0B0E14;
     scroll-behavior: smooth !important;
 }
 

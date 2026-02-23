@@ -1,40 +1,37 @@
 import {useTranslation} from "react-i18next";
-import {Code, Layers} from "@mui/icons-material";
 import {Project} from "../../models/project.ts";
+import {MdCode, MdLayers} from "react-icons/md";
 
 const ProjectStats = ({project}: { project: Project }) => {
     const {t} = useTranslation();
 
     return (
-        <div className="grid grid-cols-2 gap-3 md:gap-4 p-3 md:p-4 bg-[#0a0a1a] rounded-xl overflow-hidden relative">
+        <div className="grid grid-cols-2 gap-3 md:gap-4 p-1 md:p-2 rounded-xl overflow-hidden relative">
             <div
-                className="absolute inset-0 bg-linear-to-br from-blue-900/20 to-purple-900/20 opacity-50 blur-2xl z-0"/>
-
-            <div
-                className="relative z-10 flex items-center space-x-2 md:space-x-3 bg-white/5 p-2 md:p-3 rounded-lg border border-blue-500/20 transition-all duration-300 hover:scale-105 hover:border-blue-500/50 hover:shadow-lg">
-                <div className="bg-blue-500/20 p-1.5 md:p-2 rounded-full">
-                    <Code className="text-blue-300 w-4 h-4 md:w-6 md:h-6" strokeWidth={1.5}/>
+                className="relative z-10 flex items-center space-x-2 md:space-x-3 bg-layered-slate p-2 md:p-3 rounded-lg border border-steel-blue">
+                <div className="bg-steel-blue p-1.5 md:p-2 rounded-full">
+                    <MdCode className="text-white/80 w-4 h-4 md:w-6 md:h-6"/>
                 </div>
                 <div className="grow">
-                    <div className="text-lg md:text-xl font-semibold text-blue-200">
+                    <div className="text-lg md:text-xl font-semibold text-white/80">
                         {project.techStack.length}
                     </div>
-                    <div className="text-[10px] md:text-xs text-gray-400">
+                    <div className="text-[10px] md:text-xs text-ghost-white">
                         {t('projects.technologies')}
                     </div>
                 </div>
             </div>
 
             <div
-                className="relative z-10 flex items-center space-x-2 md:space-x-3 bg-white/5 p-2 md:p-3 rounded-lg border border-purple-500/20 transition-all duration-300 hover:scale-105 hover:border-purple-500/50 hover:shadow-lg">
-                <div className="bg-purple-500/20 p-1.5 md:p-2 rounded-full">
-                    <Layers className="text-purple-300 w-4 h-4 md:w-6 md:h-6" strokeWidth={1.5}/>
+                className="relative z-10 flex items-center space-x-2 md:space-x-3 bg-layered-slate p-2 md:p-3 rounded-lg border border-steel-blue">
+                <div className="bg-steel-blue p-1.5 md:p-2 rounded-full">
+                    <MdLayers className="text-white/80 w-4 h-4 md:w-6 md:h-6"/>
                 </div>
                 <div className="grow">
-                    <div className="text-lg md:text-xl font-semibold text-purple-200">
+                    <div className="text-lg md:text-xl font-semibold text-white/80">
                         {project.features.length}
                     </div>
-                    <div className="text-[10px] md:text-xs text-gray-400">
+                    <div className="text-[10px] md:text-xs text-ghost-white">
                         {t('projects.features')}
                     </div>
                 </div>

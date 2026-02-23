@@ -1,3 +1,4 @@
+export const MAILTO_URL = "mailto:nguyen.nguyenhongsy@outlook.com.vn";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/synguyen98/";
 export const GITHUB_URL = "https://github.com/SyNguyen98";
 export const INSTAGRAM_URL = "https://www.instagram.com/synguyen998/";

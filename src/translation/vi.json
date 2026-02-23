@@ -21,7 +21,11 @@
     "below": "Phần Mềm",
     "from": "Từ Một Sinh Viên Vật Lý",
     "to": "Cho Đến Một Kỹ Sư Phần Mềm",
-    "slogan": "Đam mê công nghệ, tạo ra những trang web truyền cảm hứng cho mọi người."
+    "slogan": "Đam mê công nghệ, tạo ra những trang web truyền cảm hứng cho mọi người.",
+    "buttons": {
+      "download": "Tải CV",
+      "project": "Xem Dự Án"
+    }
   },
   "about_me": {
     "title": "Về Tôi",
@@ -29,10 +33,6 @@
     "hello": "Xin chào, tôi là",
     "name": "Nguyễn Hồng Sỹ Nguyên",
     "description": "Một Kỹ Sư Phần Mềm tại <b>Bosch Global Software Technologies Vietnam</b>, đam mê công nghệ và học hỏi không ngừng. Tôi thích khám phá các công nghệ mới và xây dựng các ứng dụng không chỉ giải quyết các vấn đề thực tế mà còn phục vụ cho chính tôi.\nĐối với tôi, lập trình không chỉ là công việc — đó là cách để tạo ra, đổi mới và biến những ý tưởng thành hiện thực. \uD83D\uDE80",
-    "buttons": {
-      "download": "Tải CV",
-      "contact": "Liên Hệ Với Tôi"
-    },
     "stats": {
       "experience": {
         "title": "Kinh Nghiệm",
@@ -118,6 +118,6 @@
   },
   "footer": {
     "love_code": "Một Chàng Trai Yêu Lập Trình",
-    "last_update": "Cập nhật lần cuối vào 21/2/2026"
+    "last_update": "Cập nhật lần cuối vào 24/2/2026"
   }
 }
