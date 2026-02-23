@@ -39,7 +39,7 @@ const SOCIAL_LINKS = [
     },
     {
         displayName: "Youtube",
-        subText: "@nguyenandbuddies",
+        subText: "@nguyenmemoria",
         icon: FaYoutube,
         url: YOUTUBE_URL,
         color: "#FF0000",
