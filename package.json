@@ -25,7 +25,7 @@
     "react-i18next": "^16.5.4",
     "react-icons": "^5.5.0",
     "react-router": "7.12.0",
-    "sweetalert2": "^11.26.20",
+    "sweetalert2": "^11.26.21",
     "swiper": "^12.1.2",
     "tailwind-merge": "^3.5.0"
   },
