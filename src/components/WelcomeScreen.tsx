@@ -11,7 +11,7 @@ const TextWriter = () => {
     const [displayText, setDisplayText] = useState('');
 
     useEffect(() => {
-        const text = "synguyen.info.vn";
+        const text = "synguyen.id.vn";
         let index = 0;
         const timer = setInterval(() => {
             if (index <= text.length) {
