@@ -1,7 +1,7 @@
 import {createContext, ReactNode, useState} from "react";
 import {useTranslation} from "react-i18next";
 
-export const LanguageContext = createContext({ language: "en", changeLanguage: (_lang: string) => {} });
+export const LanguageContext = createContext({ language: "en", changeLanguage: (_: string) => {} });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
     const { i18n } = useTranslation();
