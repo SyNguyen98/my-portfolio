@@ -36,10 +36,12 @@ function SelectLanguage() {
                     }
                 }}
                 MenuProps={{
-                    PaperProps: {
-                        sx: {
-                            backgroundColor: "rgb(255 255 255 / 0.1)",
-                            color: "#E0E0E0",
+                    slotProps: {
+                        paper: {
+                            sx: {
+                                backgroundColor: "rgb(255 255 255 / 0.1)",
+                                color: "#E0E0E0",
+                            },
                         },
                     },
                 }}>
