@@ -77,7 +77,3 @@ npm run preview    # Preview production build locally
    `vi.json`
 3. Upload the project image to the CDN repo and reference it as:
    `https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/projects/<name>.webp`
-
-## Infrastructure
-
-Terraform configuration is in `terraform/` and provisions the Azure Static Web App resource.
