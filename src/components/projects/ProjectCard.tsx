@@ -50,6 +50,17 @@ const ProjectCard = ({project}: Props) => {
                                     <MdLink className="w-6 h-6"/>
                                 </a>
                             )}
+                            {project.githubLink && (
+                                <a href={project.githubLink || "#"}
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   className="inline-flex items-center space-x-2 text-neon-cyan hover:text-neon-cyan/80 transition-colors duration-200">
+                                    <span className="text-sm font-medium">
+                                        GitHub
+                                    </span>
+                                    <MdLink className="w-6 h-6"/>
+                                </a>
+                            )}
                         </div>
                     </div>
 

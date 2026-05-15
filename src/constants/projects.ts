@@ -28,7 +28,6 @@ export const PROJECTS: Project[] = [
         title: "MEMORIA",
         description: "projects.list.memoria.description",
         link: "https://www.memoria.com.vn",
-        githubLink: "https://github.com/SyNguyen98/memoria",
         techStack: [
             {icon: FaReact, name: "React"},
             {icon: SiSpringboot, name: "Spring Boot"},
