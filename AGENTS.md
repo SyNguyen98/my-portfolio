@@ -39,6 +39,9 @@ All static content lives in `src/constants/` — never hardcoded in components:
 - MUI v9 with Emotion for complex UI components
 - `tailwind-merge` used to safely compose class strings
 - Custom font: `src/assets/fonts/genshin.ttf` loaded via `src/assets/fonts/font.css`
+- Custom color tokens defined in `src/index.css` via the `@theme` block — always use these instead of raw hex values:
+  - Dark theme: `deep-space` (#0B0E14), `layered-slate` (#161B22), `steel-blue` (#1E293B), `ghost-white` (#BDBDBD), `neon-cyan` (#00F5FF), `deep-purple` (#7000FF)
+  - Light theme: `zinc-white`, `pale-gray`, `dark-navy`, `slate-navy`, `cobalt-blue`, `emerald-green`
 
 ### Animations
 
@@ -56,6 +59,7 @@ Project images are **not bundled** — hosted externally on jsDelivr CDN:
 ```bash
 npm run dev          # Start dev server (Vite HMR)
 npm run build        # Type-check (tsc -b) then build
+npm run preview      # Preview production build locally
 npm run lint         # ESLint check
 npm run test         # Vitest in watch mode
 npm run test:ci      # Vitest with coverage (text/json/html reports)
@@ -69,12 +73,13 @@ exists currently — new tests follow that co-location pattern.
 Deployed to **Azure Static Web Apps**. `staticwebapp.config.json` configures SPA fallback to `index.html` (required for
 client-side routing on `/projects`).
 
-Terraform infra is in `terraform/` — `main.tf` / `variables.tf` / `terraform.tfvars`.
-
 ## Key Conventions
 
 - **Adding a project**: add entry to `PROJECTS` in `src/constants/projects.ts`, add translation keys to both `en.json`
   and `vi.json` for `description` and each `features.*` key.
 - **Tech icons** come from `react-icons` (`IconType`) — always typed via the `Project` model in `src/models/project.ts`.
+- **Tech stack icons** in `src/constants/tech.ts` use string filenames (e.g., `"react.svg"`), **not** `IconType` — they
+  are fetched at runtime from CDN: `https://cdn.jsdelivr.net/gh/SyNguyen98/image-storage@main/my-portfolio/techs/${icon}`
+- **Router**: uses `react-router` v7 — import from `"react-router"`, not `"react-router-dom"`.
 - ESLint config: `eslint.config.js` (flat config, ESLint v9).
 
